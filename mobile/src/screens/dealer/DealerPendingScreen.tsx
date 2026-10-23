@@ -1,0 +1,5 @@
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { useAppStore } from '../../store/useAppStore';
+import { COLORS } from '../../utils/theme';
+export default function DealerPendingScreen(){const signOut=useAppStore(s=>s.signOut);return <View style={s.page}><Text style={s.title}>Application under review</Text><Text style={s.body}>Your dealer account is pending administrator approval. Wholesale pricing and ordering will be available once your business details are verified.</Text><TouchableOpacity style={s.button} onPress={()=>void signOut()}><Text style={s.buttonText}>Sign out</Text></TouchableOpacity></View>}
+const s=StyleSheet.create({page:{flex:1,justifyContent:'center',padding:28,backgroundColor:COLORS.surface},title:{fontSize:24,fontWeight:'700',color:COLORS.text,marginBottom:12},body:{fontSize:16,lineHeight:24,color:COLORS.textSecondary},button:{marginTop:24,backgroundColor:COLORS.primary,padding:14,borderRadius:8,alignItems:'center'},buttonText:{color:COLORS.textOnPrimary,fontWeight:'700'}});
