@@ -1,0 +1,10 @@
+{
+  "name": "Califnco Instagram Failure Alert",
+  "nodes": [
+    { "parameters": {}, "id": "error-trigger", "name": "On workflow error", "type": "n8n-nodes-base.errorTrigger", "typeVersion": 1, "position": [0, 0] },
+    { "parameters": { "fromEmail": "={{$env.ADMIN_NOTIFICATION_EMAIL}}", "toEmail": "={{$env.ADMIN_NOTIFICATION_EMAIL}}", "subject": "Califnco Instagram workflow failed", "text": "Workflow: {{$json.workflow.name}}\nExecution: {{$json.execution.url}}\nLast node: {{$json.execution.lastNodeExecuted}}\nError: {{$json.execution.error.message}}" }, "id": "send-error-email", "name": "Email administrator", "type": "n8n-nodes-base.emailSend", "typeVersion": 2.1, "position": [240, 0], "credentials": { "smtp": { "id": "SET_SMTP_CREDENTIAL_ID", "name": "SMTP account" } } }
+  ],
+  "connections": { "On workflow error": { "main": [[{ "node": "Email administrator", "type": "main", "index": 0 }]] } },
+  "active": false,
+  "settings": { "executionOrder": "v1" }
+}

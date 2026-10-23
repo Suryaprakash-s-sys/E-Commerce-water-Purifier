@@ -1,0 +1,56 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function admin() { return signedIn() && (request.auth.token.admin == true || request.auth.token.role == 'admin'); }
+    function own(uid) { return signedIn() && request.auth.uid == uid; }
+    function approvedDealer() {
+      return signedIn() && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'dealer'
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.dealerStatus == 'approved';
+    }
+    match /products/{id} {
+      allow read: if resource.data.isActive == true || admin();
+      allow create, update, delete: if admin();
+    }
+    match /users/{uid} {
+      allow read: if own(uid) || admin();
+      allow create: if own(uid) && (request.resource.data.role == 'customer'
+        || (request.resource.data.role == 'dealer' && request.resource.data.dealerStatus == 'pending'));
+      allow update: if admin() || (own(uid)
+        && request.resource.data.role == resource.data.role
+        && ((!('dealerStatus' in resource.data) && !('dealerStatus' in request.resource.data))
+          || request.resource.data.dealerStatus == resource.data.dealerStatus)
+        && request.resource.data.isActive == resource.data.isActive);
+      allow delete: if admin();
+    }
+    match /dealerApplications/{uid} {
+      allow create: if own(uid) && request.resource.data.status == 'pending';
+      allow read: if own(uid) || admin();
+      allow update: if admin();
+      allow delete: if admin();
+    }
+    match /carts/{uid} {
+      allow read: if own(uid);
+      allow write: if own(uid);
+    }
+    match /orders/{id} {
+      allow read: if admin() || (signedIn() && resource.data.userId == request.auth.uid);
+      // Orders are created only by the trusted payment verification function.
+      allow create: if false;
+      allow update: if admin();
+      allow delete: if admin();
+    }
+    match /serviceBookings/{id} {
+      allow create: if signedIn() && request.resource.data.userId == request.auth.uid && request.resource.data.status == 'pending';
+      allow read: if admin() || (signedIn() && resource.data.userId == request.auth.uid);
+      allow update, delete: if admin();
+    }
+    match /categories/{id} { allow read: if true; allow write: if admin(); }
+    match /notifications/{id} {
+      allow read, update: if admin() || (signedIn() && resource.data.userId == request.auth.uid);
+      allow create, delete: if admin();
+    }
+    match /dealerPrices/{id} { allow read: if approvedDealer() || admin(); allow write: if admin(); }
+    match /{document=**} { allow read, write: if false; }
+  }
+}

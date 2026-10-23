@@ -1,0 +1,1245 @@
+[
+  {
+    "id": "p001",
+    "name": "AquaPure RO UV UF TDS 10L Water Purifier",
+    "category": "water-purifiers",
+    "brand": "AquaPure",
+    "description": "Advanced 7-stage purification with RO, UV, UF and TDS controller. Suitable for all water sources. 10L storage tank.",
+    "retailPrice": 12999,
+    "dealerPrice": 9500,
+    "stock": 45,
+    "rating": 4.5,
+    "reviewCount": 234,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/water-purifier-ro-1.jpg"
+    ],
+    "tags": ["RO", "UV", "UF", "TDS Controller"],
+    "specifications": {
+      "Purification": "RO+UV+UF+TDS Controller",
+      "Storage": "10 Liters",
+      "Input Water Type": "All water types",
+      "Purification Rate": "15 Liters/Hour",
+      "Warranty": "1 Year"
+    },
+    "isActive": true,
+    "isFeatured": true
+  },
+  {
+    "id": "p002",
+    "name": "HydroGuard 8L RO Water Purifier with Mineralizer",
+    "category": "water-purifiers",
+    "brand": "HydroGuard",
+    "description": "Premium RO purifier with mineral retention technology. Keeps essential minerals while removing impurities.",
+    "retailPrice": 9999,
+    "dealerPrice": 7200,
+    "stock": 60,
+    "rating": 4.3,
+    "reviewCount": 189,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/water-purifier-ro-2.jpg"
+    ],
+    "tags": ["RO", "Mineralizer"],
+    "specifications": {
+      "Purification": "RO + Mineralizer",
+      "Storage": "8 Liters",
+      "Warranty": "2 Years"
+    },
+    "isActive": true,
+    "isFeatured": true
+  },
+  {
+    "id": "p003",
+    "name": "PureFlow Gravity Water Purifier 15L",
+    "category": "water-purifiers",
+    "brand": "PureFlow",
+    "description": "Non-electric gravity-based purifier ideal for areas with no electricity. Advanced UF membrane technology.",
+    "retailPrice": 3499,
+    "dealerPrice": 2500,
+    "stock": 80,
+    "rating": 4.1,
+    "reviewCount": 312,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/gravity-purifier.jpg"
+    ],
+    "tags": ["Non-Electric", "Gravity", "UF"],
+    "specifications": {
+      "Purification": "UF + Activated Carbon",
+      "Storage": "15 Liters",
+      "Power": "None (Gravity-based)",
+      "Warranty": "1 Year"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p004",
+    "name": "TurboClear UV Water Purifier 7L",
+    "category": "water-purifiers",
+    "brand": "TurboClear",
+    "description": "UV-based water purifier kills 99.9% of bacteria and viruses. Best for municipal water sources.",
+    "retailPrice": 6499,
+    "dealerPrice": 4800,
+    "stock": 35,
+    "rating": 4.4,
+    "reviewCount": 145,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/uv-purifier.jpg"
+    ],
+    "tags": ["UV", "Anti-Bacterial"],
+    "specifications": {
+      "Purification": "UV + UF",
+      "Storage": "7 Liters",
+      "Power": "60W",
+      "Warranty": "1 Year"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p005",
+    "name": "AquaCool Hot & Cold Water Dispenser",
+    "category": "dispensers",
+    "brand": "AquaCool",
+    "description": "Top-loading water dispenser with hot and cold functionality. Perfect for office and home use.",
+    "retailPrice": 7999,
+    "dealerPrice": 5800,
+    "stock": 25,
+    "rating": 4.2,
+    "reviewCount": 98,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/water-dispenser.jpg"
+    ],
+    "tags": ["Hot & Cold", "Top-Load"],
+    "specifications": {
+      "Type": "Top Loading",
+      "Hot Water": "Yes",
+      "Cold Water": "Yes",
+      "Normal Water": "Yes",
+      "Warranty": "1 Year"
+    },
+    "isActive": true,
+    "isFeatured": true
+  },
+  {
+    "id": "p006",
+    "name": "CoolStream Bottom Load Water Dispenser",
+    "category": "dispensers",
+    "brand": "CoolStream",
+    "description": "Elegant bottom-loading design. No lifting heavy water bottles. LED temperature indicators.",
+    "retailPrice": 11999,
+    "dealerPrice": 8800,
+    "stock": 20,
+    "rating": 4.6,
+    "reviewCount": 67,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/bottom-load-dispenser.jpg"
+    ],
+    "tags": ["Bottom-Load", "LED Indicator"],
+    "specifications": {
+      "Type": "Bottom Loading",
+      "Hot Water": "Yes",
+      "Cold Water": "Yes",
+      "Warranty": "2 Years"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p007",
+    "name": "FlowMaster Submersible Water Pump 1HP",
+    "category": "pumps",
+    "brand": "FlowMaster",
+    "description": "Heavy-duty submersible pump for deep wells and bore wells. Self-priming with thermal overload protection.",
+    "retailPrice": 4999,
+    "dealerPrice": 3600,
+    "stock": 40,
+    "rating": 4.3,
+    "reviewCount": 78,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/submersible-pump.jpg"
+    ],
+    "tags": ["Submersible", "1HP", "Deep Well"],
+    "specifications": {
+      "Power": "1 HP",
+      "Head": "Up to 45m",
+      "Discharge": "1600 LPH",
+      "Warranty": "1 Year"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p008",
+    "name": "JetPump Self-Priming Monoblock Pump 0.5HP",
+    "category": "pumps",
+    "brand": "JetPump",
+    "description": "Compact monoblock pump for domestic water supply. Energy efficient with silent operation.",
+    "retailPrice": 3299,
+    "dealerPrice": 2400,
+    "stock": 55,
+    "rating": 4.0,
+    "reviewCount": 134,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/monoblock-pump.jpg"
+    ],
+    "tags": ["Monoblock", "0.5HP", "Self-Priming"],
+    "specifications": {
+      "Power": "0.5 HP",
+      "Head": "Up to 25m",
+      "Discharge": "1800 LPH",
+      "Warranty": "1 Year"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p009",
+    "name": "PureSediment PP Spun Filter Cartridge 10 inch",
+    "category": "filters",
+    "brand": "PureSediment",
+    "description": "5 micron PP spun filter for pre-filtration. Removes dirt, sand, rust and sediments effectively.",
+    "retailPrice": 299,
+    "dealerPrice": 180,
+    "stock": 500,
+    "rating": 4.2,
+    "reviewCount": 456,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/sediment-filter.jpg"
+    ],
+    "tags": ["Sediment", "5 Micron", "Pre-Filter"],
+    "specifications": {
+      "Size": "10 inch",
+      "Micron": "5",
+      "Material": "PP Spun",
+      "Life": "3-6 Months"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p010",
+    "name": "CarbonPure Activated Carbon Block Filter",
+    "category": "filters",
+    "brand": "CarbonPure",
+    "description": "High-capacity activated carbon block filter removes chlorine, taste, odor and organic contaminants.",
+    "retailPrice": 499,
+    "dealerPrice": 320,
+    "stock": 300,
+    "rating": 4.4,
+    "reviewCount": 289,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/carbon-filter.jpg"
+    ],
+    "tags": ["Carbon Block", "Chlorine Removal"],
+    "specifications": {
+      "Size": "10 inch",
+      "Type": "Carbon Block",
+      "Life": "6-12 Months"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p011",
+    "name": "RO Membrane 75 GPD Thin Film Composite",
+    "category": "spare-parts",
+    "brand": "MembraTec",
+    "description": "High-rejection TFC RO membrane. Removes 98% of TDS, heavy metals, and dissolved impurities.",
+    "retailPrice": 1499,
+    "dealerPrice": 950,
+    "stock": 200,
+    "rating": 4.5,
+    "reviewCount": 178,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/ro-membrane.jpg"
+    ],
+    "tags": ["RO Membrane", "75 GPD", "TFC"],
+    "specifications": {
+      "Capacity": "75 GPD",
+      "Rejection Rate": "98%",
+      "Type": "TFC",
+      "Life": "12-24 Months"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p012",
+    "name": "UV Lamp 11W Sterilization Bulb",
+    "category": "spare-parts",
+    "brand": "UVGuard",
+    "description": "Replacement UV lamp for all standard water purifiers. 11W power for effective sterilization.",
+    "retailPrice": 599,
+    "dealerPrice": 380,
+    "stock": 150,
+    "rating": 4.3,
+    "reviewCount": 92,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/uv-lamp.jpg"
+    ],
+    "tags": ["UV Lamp", "11W", "Replacement"],
+    "specifications": {
+      "Power": "11W",
+      "Life": "8000 Hours",
+      "Compatibility": "Universal"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p013",
+    "name": "SMPS Power Supply 24V for RO Purifier",
+    "category": "spare-parts",
+    "brand": "PowerSafe",
+    "description": "Switching mode power supply for RO water purifiers. Input 100-240V AC, Output 24V DC 2A.",
+    "retailPrice": 399,
+    "dealerPrice": 250,
+    "stock": 120,
+    "rating": 4.1,
+    "reviewCount": 63,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/smps-adapter.jpg"
+    ],
+    "tags": ["SMPS", "24V", "Power Supply"],
+    "specifications": {
+      "Input": "100-240V AC",
+      "Output": "24V DC 2A",
+      "Warranty": "6 Months"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p014",
+    "name": "TDS Meter Digital Water Quality Tester",
+    "category": "spare-parts",
+    "brand": "TDSCheck",
+    "description": "Professional digital TDS meter for testing water purity. Range 0-9990 ppm with temperature display.",
+    "retailPrice": 349,
+    "dealerPrice": 220,
+    "stock": 250,
+    "rating": 4.6,
+    "reviewCount": 521,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/tds-meter.jpg"
+    ],
+    "tags": ["TDS Meter", "Digital", "Water Testing"],
+    "specifications": {
+      "Range": "0-9990 ppm",
+      "Accuracy": "±2%",
+      "Temperature": "Yes",
+      "Battery": "2x 1.5V AAA"
+    },
+    "isActive": true,
+    "isFeatured": true
+  },
+  {
+    "id": "p015",
+    "name": "AquaElite 12L RO UV Water Purifier with Alkaline",
+    "category": "water-purifiers",
+    "brand": "AquaElite",
+    "description": "Premium 8-stage purifier with alkaline enhancement. Produces healthy alkaline water with optimal pH.",
+    "retailPrice": 16999,
+    "dealerPrice": 12500,
+    "stock": 30,
+    "rating": 4.7,
+    "reviewCount": 167,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/alkaline-purifier.jpg"
+    ],
+    "tags": ["RO", "UV", "Alkaline", "Premium"],
+    "specifications": {
+      "Purification": "RO+UV+UF+Alkaline",
+      "Storage": "12 Liters",
+      "pH Range": "7.5-9.5",
+      "Warranty": "2 Years"
+    },
+    "isActive": true,
+    "isFeatured": true
+  },
+  {
+    "id": "p016",
+    "name": "WaterFresh Table Top RO Purifier 5L",
+    "category": "water-purifiers",
+    "brand": "WaterFresh",
+    "description": "Compact tabletop RO purifier for small families. Fits anywhere, easy to install.",
+    "retailPrice": 7499,
+    "dealerPrice": 5400,
+    "stock": 50,
+    "rating": 4.2,
+    "reviewCount": 89,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/tabletop-purifier.jpg"
+    ],
+    "tags": ["Table Top", "Compact", "RO"],
+    "specifications": {
+      "Purification": "RO+UV",
+      "Storage": "5 Liters",
+      "Warranty": "1 Year"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p017",
+    "name": "IndustrialPure 50 LPH Commercial RO Plant",
+    "category": "water-purifiers",
+    "brand": "IndustrialPure",
+    "description": "Industrial-grade commercial RO plant for restaurants, offices and small industries. 50 LPH output.",
+    "retailPrice": 45000,
+    "dealerPrice": 33000,
+    "stock": 8,
+    "rating": 4.4,
+    "reviewCount": 34,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/commercial-ro.jpg"
+    ],
+    "tags": ["Commercial", "50 LPH", "Industrial"],
+    "specifications": {
+      "Output": "50 LPH",
+      "Input TDS": "Up to 2000 ppm",
+      "Voltage": "230V AC",
+      "Warranty": "1 Year"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p018",
+    "name": "SlimLine Under-Sink RO Water Filter System",
+    "category": "water-purifiers",
+    "brand": "SlimLine",
+    "description": "Space-saving under-sink RO system. Hidden installation, dedicated faucet for pure water.",
+    "retailPrice": 14999,
+    "dealerPrice": 11000,
+    "stock": 22,
+    "rating": 4.5,
+    "reviewCount": 112,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/under-sink-ro.jpg"
+    ],
+    "tags": ["Under-Sink", "Space-Saving", "RO"],
+    "specifications": {
+      "Purification": "RO+UV+UF",
+      "Type": "Under-Sink",
+      "Stages": "6",
+      "Warranty": "2 Years"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p019",
+    "name": "PortaFilter Portable Water Filter Straw",
+    "category": "filters",
+    "brand": "PortaFilter",
+    "description": "Survival water filter straw. Filters up to 1500 liters. Removes bacteria and protozoa.",
+    "retailPrice": 1299,
+    "dealerPrice": 850,
+    "stock": 200,
+    "rating": 4.3,
+    "reviewCount": 445,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/filter-straw.jpg"
+    ],
+    "tags": ["Portable", "Straw Filter", "Outdoor"],
+    "specifications": {
+      "Capacity": "1500 Liters",
+      "Removes": "Bacteria, Protozoa",
+      "Weight": "56g"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p020",
+    "name": "CeramicStar Candle Filter Set 8-piece",
+    "category": "filters",
+    "brand": "CeramicStar",
+    "description": "Ceramic candle filters for pot-type gravity purifiers. Pack of 8, each with silver nanoparticles.",
+    "retailPrice": 799,
+    "dealerPrice": 520,
+    "stock": 150,
+    "rating": 4.0,
+    "reviewCount": 203,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/ceramic-filter.jpg"
+    ],
+    "tags": ["Ceramic", "Candle Filter", "Silver"],
+    "specifications": {
+      "Quantity": "8 Pieces",
+      "Type": "Ceramic with Silver",
+      "Life": "6-12 Months"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p021",
+    "name": "AquaDispense Floor Standing Hot Cold Normal Dispenser",
+    "category": "dispensers",
+    "brand": "AquaDispense",
+    "description": "Three-tap floor standing dispenser with hot, cold and normal water. Large 1.5L cold tank.",
+    "retailPrice": 9499,
+    "dealerPrice": 6900,
+    "stock": 18,
+    "rating": 4.3,
+    "reviewCount": 55,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/floor-dispenser.jpg"
+    ],
+    "tags": ["Floor Standing", "3 Taps", "Hot Cold Normal"],
+    "specifications": {
+      "Type": "Floor Standing",
+      "Taps": "3 (Hot/Cold/Normal)",
+      "Cooling": "Compressor",
+      "Warranty": "1 Year"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p022",
+    "name": "MiniCool Table Top Water Cooler Dispenser",
+    "category": "dispensers",
+    "brand": "MiniCool",
+    "description": "Compact tabletop water cooler with cooling and heating. Ideal for desks and small spaces.",
+    "retailPrice": 5999,
+    "dealerPrice": 4300,
+    "stock": 32,
+    "rating": 4.1,
+    "reviewCount": 78,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/tabletop-cooler.jpg"
+    ],
+    "tags": ["Table Top", "Mini", "Cooling"],
+    "specifications": {
+      "Type": "Table Top",
+      "Cooling": "Thermoelectric",
+      "Warranty": "1 Year"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p023",
+    "name": "High Flow Booster Pump 24V DC for RO",
+    "category": "pumps",
+    "brand": "BoostPro",
+    "description": "24V DC booster pump for RO systems with low inlet pressure. Auto shut-off with pressure switch.",
+    "retailPrice": 1299,
+    "dealerPrice": 850,
+    "stock": 180,
+    "rating": 4.2,
+    "reviewCount": 167,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/booster-pump.jpg"
+    ],
+    "tags": ["Booster Pump", "24V DC", "RO"],
+    "specifications": {
+      "Voltage": "24V DC",
+      "Flow Rate": "100 GPD max",
+      "Pressure Switch": "Included",
+      "Life": "3000+ Hours"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p024",
+    "name": "Centrifugal Monoblock Pump 1HP Cast Iron",
+    "category": "pumps",
+    "brand": "IronFlow",
+    "description": "Heavy-duty cast iron monoblock pump for agriculture and industrial applications.",
+    "retailPrice": 5499,
+    "dealerPrice": 4000,
+    "stock": 28,
+    "rating": 4.4,
+    "reviewCount": 89,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/monoblock-ci.jpg"
+    ],
+    "tags": ["Cast Iron", "1HP", "Agriculture"],
+    "specifications": {
+      "Power": "1 HP",
+      "Material": "Cast Iron",
+      "Head": "35m max",
+      "Warranty": "1 Year"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p025",
+    "name": "Solenoid Valve 24V DC for RO Purifier",
+    "category": "spare-parts",
+    "brand": "ValveTec",
+    "description": "High-quality 24V DC solenoid valve for automatic water control in RO systems.",
+    "retailPrice": 299,
+    "dealerPrice": 190,
+    "stock": 300,
+    "rating": 4.3,
+    "reviewCount": 134,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/solenoid-valve.jpg"
+    ],
+    "tags": ["Solenoid Valve", "24V DC", "Replacement"],
+    "specifications": {
+      "Voltage": "24V DC",
+      "Type": "Normally Closed",
+      "Connection": "1/4 inch"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p026",
+    "name": "RO Storage Tank 12L Pressure Tank",
+    "category": "spare-parts",
+    "brand": "TankPure",
+    "description": "Food-grade 12L pressure storage tank for RO systems. Butyl rubber bladder for pure water storage.",
+    "retailPrice": 1199,
+    "dealerPrice": 800,
+    "stock": 100,
+    "rating": 4.4,
+    "reviewCount": 98,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/ro-tank.jpg"
+    ],
+    "tags": ["Storage Tank", "12L", "Pressure Tank"],
+    "specifications": {
+      "Capacity": "12 Liters",
+      "Pressure": "0-100 psi",
+      "Material": "Food-grade Steel",
+      "Bladder": "Butyl Rubber"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p027",
+    "name": "Auto Cut-off Float Valve Tank Fitting",
+    "category": "spare-parts",
+    "brand": "ValveTec",
+    "description": "Automatic float valve for overhead tanks. Stops water flow when tank is full.",
+    "retailPrice": 149,
+    "dealerPrice": 90,
+    "stock": 500,
+    "rating": 4.0,
+    "reviewCount": 312,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/float-valve.jpg"
+    ],
+    "tags": ["Float Valve", "Auto Cut-off", "Tank"],
+    "specifications": {
+      "Size": "1/2 inch",
+      "Material": "Brass + Plastic",
+      "Working Pressure": "1-5 bar"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p028",
+    "name": "AquaNova Countertop RO Water Purifier",
+    "category": "water-purifiers",
+    "brand": "AquaNova",
+    "description": "Sleek countertop design with 5-stage RO filtration. No permanent installation required.",
+    "retailPrice": 10999,
+    "dealerPrice": 8000,
+    "stock": 38,
+    "rating": 4.5,
+    "reviewCount": 143,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/countertop-ro.jpg"
+    ],
+    "tags": ["Countertop", "No Installation", "RO"],
+    "specifications": {
+      "Purification": "5-Stage RO",
+      "Storage": "Tankless",
+      "Capacity": "400 GPD",
+      "Warranty": "2 Years"
+    },
+    "isActive": true,
+    "isFeatured": true
+  },
+  {
+    "id": "p029",
+    "name": "WaterVita Whole House Water Filter System",
+    "category": "filters",
+    "brand": "WaterVita",
+    "description": "Whole house filtration system. 3-stage filtration for every tap in your home.",
+    "retailPrice": 8999,
+    "dealerPrice": 6500,
+    "stock": 15,
+    "rating": 4.4,
+    "reviewCount": 56,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/whole-house-filter.jpg"
+    ],
+    "tags": ["Whole House", "3-Stage", "Multiple Taps"],
+    "specifications": {
+      "Stages": "3",
+      "Flow Rate": "15 LPM",
+      "Connection": "1 inch",
+      "Life": "12 Months"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p030",
+    "name": "Post-Carbon Inline Filter Cartridge for RO",
+    "category": "filters",
+    "brand": "PureSediment",
+    "description": "Inline post-carbon filter for taste and odor improvement of RO purified water.",
+    "retailPrice": 249,
+    "dealerPrice": 155,
+    "stock": 400,
+    "rating": 4.2,
+    "reviewCount": 267,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/inline-filter.jpg"
+    ],
+    "tags": ["Post-Carbon", "Inline", "Taste"],
+    "specifications": {
+      "Type": "Post-Carbon",
+      "Size": "Inline",
+      "Life": "6-12 Months"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p031",
+    "name": "Water Purifier Installation Kit Complete",
+    "category": "spare-parts",
+    "brand": "InstallPro",
+    "description": "Complete installation kit with 3/8 tube, connectors, drain saddle, feed valve and faucet.",
+    "retailPrice": 699,
+    "dealerPrice": 450,
+    "stock": 150,
+    "rating": 4.3,
+    "reviewCount": 189,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/install-kit.jpg"
+    ],
+    "tags": ["Installation Kit", "Complete", "DIY"],
+    "specifications": {
+      "Includes": "Tubes, Connectors, Faucet, Drain Saddle",
+      "Tube Length": "3 meters each"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p032",
+    "name": "AquaSpring Spring Water Natural Purifier",
+    "category": "water-purifiers",
+    "brand": "AquaSpring",
+    "description": "Natural spring water purification system using multi-layer mineral stones and charcoal.",
+    "retailPrice": 4999,
+    "dealerPrice": 3600,
+    "stock": 42,
+    "rating": 4.1,
+    "reviewCount": 78,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/spring-purifier.jpg"
+    ],
+    "tags": ["Natural", "Mineral Stones", "No-Electric"],
+    "specifications": {
+      "Type": "Natural filtration",
+      "Stages": "Multi-layer",
+      "Power": "None"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p033",
+    "name": "AquaMineral Remineralizer Filter Cartridge",
+    "category": "filters",
+    "brand": "AquaMineral",
+    "description": "Adds healthy minerals (Ca, Mg, K) back to RO purified water. Inline post-filter design.",
+    "retailPrice": 899,
+    "dealerPrice": 600,
+    "stock": 120,
+    "rating": 4.5,
+    "reviewCount": 234,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/remineralizer.jpg"
+    ],
+    "tags": ["Remineralizer", "Minerals", "Post-Filter"],
+    "specifications": {
+      "Minerals Added": "Ca, Mg, K, Na",
+      "Size": "Inline 10 inch",
+      "Life": "6-12 Months"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p034",
+    "name": "Pump Pressure Switch 40-60 PSI Auto Control",
+    "category": "spare-parts",
+    "brand": "SwitchPro",
+    "description": "Automatic pressure switch for water pump control. Turns pump on/off based on water pressure.",
+    "retailPrice": 549,
+    "dealerPrice": 360,
+    "stock": 200,
+    "rating": 4.2,
+    "reviewCount": 112,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/pressure-switch.jpg"
+    ],
+    "tags": ["Pressure Switch", "Auto Control", "Pump"],
+    "specifications": {
+      "Cut-in Pressure": "40 PSI",
+      "Cut-out Pressure": "60 PSI",
+      "Voltage": "220V AC"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p035",
+    "name": "Digital Water Flow Meter Sensor",
+    "category": "spare-parts",
+    "brand": "FlowSense",
+    "description": "Hall effect water flow sensor for measuring and monitoring water consumption.",
+    "retailPrice": 449,
+    "dealerPrice": 290,
+    "stock": 180,
+    "rating": 4.1,
+    "reviewCount": 67,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/flow-sensor.jpg"
+    ],
+    "tags": ["Flow Meter", "Digital", "Monitoring"],
+    "specifications": {
+      "Range": "1-30 LPM",
+      "Working Voltage": "5-24V DC",
+      "Connection": "1/2 inch"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p036",
+    "name": "RO Faucet Tap Chrome Finish",
+    "category": "spare-parts",
+    "brand": "FaucetPro",
+    "description": "Lead-free chrome faucet for RO purified water. 360-degree rotation, easy to install.",
+    "retailPrice": 399,
+    "dealerPrice": 250,
+    "stock": 250,
+    "rating": 4.3,
+    "reviewCount": 178,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/ro-faucet.jpg"
+    ],
+    "tags": ["Faucet", "Chrome", "Lead-free"],
+    "specifications": {
+      "Material": "Lead-free Brass",
+      "Finish": "Chrome",
+      "Rotation": "360 degrees"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p037",
+    "name": "Water Softener Resin Salt-based 25kg",
+    "category": "filters",
+    "brand": "SoftWater",
+    "description": "Ion exchange resin for water softeners. Removes calcium and magnesium ions causing hard water.",
+    "retailPrice": 3499,
+    "dealerPrice": 2500,
+    "stock": 60,
+    "rating": 4.2,
+    "reviewCount": 45,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/softener-resin.jpg"
+    ],
+    "tags": ["Water Softener", "Resin", "Hard Water"],
+    "specifications": {
+      "Quantity": "25 kg",
+      "Type": "Cation Exchange",
+      "Capacity": "50,000 grains"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p038",
+    "name": "AquaJunior Kids Water Purifier 4L",
+    "category": "water-purifiers",
+    "brand": "AquaJunior",
+    "description": "Colorful child-friendly water purifier. Safe plastics, UF + carbon filtration, 4L storage.",
+    "retailPrice": 4499,
+    "dealerPrice": 3200,
+    "stock": 45,
+    "rating": 4.4,
+    "reviewCount": 89,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/kids-purifier.jpg"
+    ],
+    "tags": ["Kids", "Colorful", "Safe", "UF"],
+    "specifications": {
+      "Purification": "UF + Carbon",
+      "Storage": "4 Liters",
+      "BPA Free": "Yes"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p039",
+    "name": "High Pressure RO Pump 75 GPD Diaphragm",
+    "category": "pumps",
+    "brand": "BoostPro",
+    "description": "75 GPD diaphragm pump for high-pressure RO systems. Self-priming, quiet operation.",
+    "retailPrice": 2499,
+    "dealerPrice": 1800,
+    "stock": 70,
+    "rating": 4.3,
+    "reviewCount": 134,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/diaphragm-pump.jpg"
+    ],
+    "tags": ["Diaphragm Pump", "75 GPD", "High Pressure"],
+    "specifications": {
+      "Capacity": "75 GPD",
+      "Voltage": "24V DC",
+      "Noise Level": "<45 dB"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p040",
+    "name": "Solar Water Pump 24V DC 1000 LPH",
+    "category": "pumps",
+    "brand": "SolarFlow",
+    "description": "DC solar pump for rural water supply. Operates directly from solar panels, no batteries needed.",
+    "retailPrice": 8999,
+    "dealerPrice": 6500,
+    "stock": 20,
+    "rating": 4.5,
+    "reviewCount": 67,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/solar-pump.jpg"
+    ],
+    "tags": ["Solar", "DC Pump", "Rural", "Eco-Friendly"],
+    "specifications": {
+      "Voltage": "24V DC",
+      "Flow Rate": "1000 LPH",
+      "Head": "20m max",
+      "Solar Panel": "100W+ recommended"
+    },
+    "isActive": true,
+    "isFeatured": true
+  },
+  {
+    "id": "p041",
+    "name": "Pipe Fittings 1/4 inch Push-fit Connector Set 10 pcs",
+    "category": "spare-parts",
+    "brand": "FitPro",
+    "description": "Quick-connect push-fit fittings for RO tubing. Includes elbows, tees, and straight connectors.",
+    "retailPrice": 199,
+    "dealerPrice": 120,
+    "stock": 600,
+    "rating": 4.1,
+    "reviewCount": 389,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/pipe-fittings.jpg"
+    ],
+    "tags": ["Push-fit", "1/4 inch", "Fittings"],
+    "specifications": {
+      "Quantity": "10 pieces",
+      "Size": "1/4 inch",
+      "Includes": "Elbows, Tees, Straights"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p042",
+    "name": "Wall Mount Water Purifier Bracket Set",
+    "category": "spare-parts",
+    "brand": "MountPro",
+    "description": "Universal wall mounting bracket for water purifiers. Heavy-duty steel, adjustable width.",
+    "retailPrice": 349,
+    "dealerPrice": 220,
+    "stock": 200,
+    "rating": 4.2,
+    "reviewCount": 145,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/wall-bracket.jpg"
+    ],
+    "tags": ["Wall Mount", "Bracket", "Universal"],
+    "specifications": {
+      "Material": "Heavy-duty Steel",
+      "Max Load": "15 kg",
+      "Adjustable": "Yes"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p043",
+    "name": "AquaPure Zero Waste Permeate Pump",
+    "category": "pumps",
+    "brand": "EcoPump",
+    "description": "Permeate pump reduces water waste by 80% in RO systems. No electricity needed, uses water pressure.",
+    "retailPrice": 1899,
+    "dealerPrice": 1300,
+    "stock": 90,
+    "rating": 4.6,
+    "reviewCount": 112,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/permeate-pump.jpg"
+    ],
+    "tags": ["Zero Waste", "Permeate Pump", "Eco"],
+    "specifications": {
+      "Waste Reduction": "Up to 80%",
+      "Power": "None",
+      "Connection": "1/4 inch"
+    },
+    "isActive": true,
+    "isFeatured": true
+  },
+  {
+    "id": "p044",
+    "name": "Water Quality pH Meter Digital Tester",
+    "category": "spare-parts",
+    "brand": "TDSCheck",
+    "description": "Precision digital pH meter for water testing. Measures pH 0-14 with ±0.1 accuracy.",
+    "retailPrice": 799,
+    "dealerPrice": 550,
+    "stock": 120,
+    "rating": 4.4,
+    "reviewCount": 234,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/ph-meter.jpg"
+    ],
+    "tags": ["pH Meter", "Digital", "Water Testing"],
+    "specifications": {
+      "Range": "0-14 pH",
+      "Accuracy": "±0.1 pH",
+      "Calibration": "2-point auto"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p045",
+    "name": "SpeedPure 100 LPH Commercial RO System",
+    "category": "water-purifiers",
+    "brand": "SpeedPure",
+    "description": "100 LPH commercial RO system for hotels, hospitals and large offices.",
+    "retailPrice": 75000,
+    "dealerPrice": 55000,
+    "stock": 5,
+    "rating": 4.5,
+    "reviewCount": 23,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/commercial-ro-100.jpg"
+    ],
+    "tags": ["Commercial", "100 LPH", "Hospital Grade"],
+    "specifications": {
+      "Output": "100 LPH",
+      "Pre-Treatment": "Multimedia + Softener",
+      "Voltage": "415V 3-Phase",
+      "Warranty": "2 Years"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p046",
+    "name": "AquaWall Mounted Water Dispenser Hot Cold",
+    "category": "dispensers",
+    "brand": "AquaWall",
+    "description": "Wall mounted tankless water dispenser. Connects directly to water line, no bottle needed.",
+    "retailPrice": 13999,
+    "dealerPrice": 10000,
+    "stock": 12,
+    "rating": 4.4,
+    "reviewCount": 45,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/wall-dispenser.jpg"
+    ],
+    "tags": ["Wall Mounted", "Tankless", "Direct-Line"],
+    "specifications": {
+      "Type": "Wall Mounted",
+      "Connection": "Direct line",
+      "Hot": "Yes",
+      "Cold": "Yes"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p047",
+    "name": "Pre-Filter Housing 10 inch Single Stage",
+    "category": "filters",
+    "brand": "HousePure",
+    "description": "Standard 10-inch filter housing for pre-filtration. Pressure release button, clear bowl.",
+    "retailPrice": 449,
+    "dealerPrice": 290,
+    "stock": 200,
+    "rating": 4.1,
+    "reviewCount": 198,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/filter-housing.jpg"
+    ],
+    "tags": ["Filter Housing", "10 inch", "Single Stage"],
+    "specifications": {
+      "Size": "10 inch",
+      "Max Pressure": "100 PSI",
+      "Bowl": "Transparent"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p048",
+    "name": "Electronic Water Level Controller Sensor",
+    "category": "spare-parts",
+    "brand": "LevelPro",
+    "description": "Automatic water level controller with overflow protection and dry-run pump protection.",
+    "retailPrice": 899,
+    "dealerPrice": 620,
+    "stock": 150,
+    "rating": 4.3,
+    "reviewCount": 167,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/water-level-controller.jpg"
+    ],
+    "tags": ["Level Controller", "Auto", "Overflow Protection"],
+    "specifications": {
+      "Voltage": "220V AC",
+      "Pump Capacity": "Up to 2 HP",
+      "Sensors": "3 probe"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p049",
+    "name": "Reverse Osmosis Filter Housing 3-Stage Set",
+    "category": "filters",
+    "brand": "HousePure",
+    "description": "Complete 3-stage filter housing set for standard RO systems. Includes wrenches.",
+    "retailPrice": 1299,
+    "dealerPrice": 900,
+    "stock": 100,
+    "rating": 4.2,
+    "reviewCount": 134,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/3stage-housing.jpg"
+    ],
+    "tags": ["3-Stage", "Housing Set", "RO"],
+    "specifications": {
+      "Stages": "3",
+      "Size": "10 inch each",
+      "Includes": "Housings + Wrenches"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p050",
+    "name": "AquaGold Premium 9-Stage Water Purifier 15L",
+    "category": "water-purifiers",
+    "brand": "AquaGold",
+    "description": "Top-of-the-line 9-stage purifier with gold-finish panel. RO+UV+UF+Alkaline+TDS+Copper.",
+    "retailPrice": 24999,
+    "dealerPrice": 18500,
+    "stock": 15,
+    "rating": 4.8,
+    "reviewCount": 89,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/gold-purifier.jpg"
+    ],
+    "tags": ["Premium", "9-Stage", "Copper", "Alkaline"],
+    "specifications": {
+      "Purification": "RO+UV+UF+Alkaline+Copper",
+      "Storage": "15 Liters",
+      "Stages": "9",
+      "Warranty": "3 Years"
+    },
+    "isActive": true,
+    "isFeatured": true
+  },
+  {
+    "id": "p051",
+    "name": "Shower Water Filter Softener",
+    "category": "filters",
+    "brand": "ShowerPure",
+    "description": "Shower head filter that removes chlorine, heavy metals and softens hard water for healthy hair.",
+    "retailPrice": 1999,
+    "dealerPrice": 1400,
+    "stock": 100,
+    "rating": 4.3,
+    "reviewCount": 345,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/shower-filter.jpg"
+    ],
+    "tags": ["Shower", "Hair Care", "Chlorine Removal"],
+    "specifications": {
+      "Life": "6 Months / 10,000L",
+      "Removes": "Chlorine, Heavy metals",
+      "Fit": "Universal"
+    },
+    "isActive": true,
+    "isFeatured": false
+  },
+  {
+    "id": "p052",
+    "name": "AquaSmart WiFi Smart Water Purifier Controller",
+    "category": "spare-parts",
+    "brand": "SmartPure",
+    "description": "IoT controller for water purifiers. Monitor filter life, water quality and control via smartphone.",
+    "retailPrice": 2999,
+    "dealerPrice": 2100,
+    "stock": 40,
+    "rating": 4.4,
+    "reviewCount": 67,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/smart-controller.jpg"
+    ],
+    "tags": ["Smart", "WiFi", "IoT", "App Control"],
+    "specifications": {
+      "Connectivity": "WiFi 2.4GHz",
+      "App": "Android + iOS",
+      "Monitors": "TDS, Filter Life, Flow"
+    },
+    "isActive": true,
+    "isFeatured": true
+  },
+  {
+    "id": "p053",
+    "name": "Magnetic Water Conditioner Anti-scale",
+    "category": "filters",
+    "brand": "MagnaFlow",
+    "description": "Magnetic water conditioner prevents scale build-up in pipes and appliances without chemicals.",
+    "retailPrice": 1499,
+    "dealerPrice": 1000,
+    "stock": 80,
+    "rating": 4.0,
+    "reviewCount": 123,
+    "images": [
+      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/magnetic-conditioner.jpg"
+    ],
+    "tags": ["Magnetic", "Anti-Scale", "No Chemicals"],
+    "specifications": {
+      "Pipe Size": "1/2 to 1 inch",
+      "Installation": "Clamp-on",
+      "Power": "None"
+    },
+    "isActive": true,
+    "isFeatured": false
+  }
+]

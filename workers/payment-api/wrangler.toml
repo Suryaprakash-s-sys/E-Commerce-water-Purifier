@@ -1,0 +1,6 @@
+name = "califnco-payment-api"
+main = "src/index.js"
+compatibility_date = "2026-10-23"
+
+[vars]
+FIREBASE_PROJECT_ID = "ecommerce-water-purifier"
