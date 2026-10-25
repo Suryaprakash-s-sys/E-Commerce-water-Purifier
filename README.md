@@ -119,6 +119,15 @@ Use the exact Firebase configuration files and project ID associated with the re
 
 Create the administrator account in Firebase Authentication. Using a trusted Firebase Admin SDK environment, assign the required custom claims:
 
+admin : admin@waterpurifier.com
+pass : 123456
+
+customer : diya@d.com
+pass : 12345678
+
+dealer : sam@s.com
+pass : 12345678
+
 ```javascript
 await getAuth().setCustomUserClaims(uid, {
   admin: true,
