@@ -1,3 +1,4 @@
+import { useAppTheme } from '../../context/ThemeContext';
 import React, { useState } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity,
@@ -8,15 +9,22 @@ import { authService } from '../../services/authService';
 import { Address } from '../../types';
 import { COLORS, FONT_SIZE, FONT_WEIGHT, SPACING, BORDER_RADIUS, SHADOW } from '../../utils/theme';
 import { Ionicons } from '@expo/vector-icons';
+import { captureCurrentAddressLocation } from '../../services/locationService';
 
-export default function AddressScreen({ navigation, route }: any) {
-  const { user, refreshProfile } = useAppStore();
+export default function AddressScreen({
+ navigation, route }: any) {
+  const styles = createStyles();
+  const { isDark } = useAppTheme();
+  void isDark;
+
+  const { user, refreshProfile, isDealer } = useAppStore();
   const addresses = user?.addresses ?? [];
   const [showForm, setShowForm] = useState(addresses.length === 0);
   const [isSaving, setIsSaving] = useState(false);
+  const [isLocating, setIsLocating] = useState(false);
   const [form, setForm] = useState<Partial<Address>>({
     id: `addr_${Date.now()}`,
-    label: 'Home',
+    label: isDealer ? 'Business' : 'Home',
     fullName: user?.displayName ?? '',
     phone: user?.phone ?? '',
     line1: '',
@@ -54,11 +62,33 @@ export default function AddressScreen({ navigation, route }: any) {
       await refreshProfile();
       Alert.alert('Success', 'Address saved successfully');
       setShowForm(false);
-      setForm({ id: `addr_${Date.now()}`, label: 'Home', fullName: user?.displayName ?? '', phone: user?.phone ?? '', line1: '', line2: '', city: '', state: '', pincode: '', country: 'India', isDefault: false });
+      setForm({ id: `addr_${Date.now()}`, label: isDealer ? 'Business' : 'Home', fullName: user?.displayName ?? '', phone: user?.phone ?? '', line1: '', line2: '', city: '', state: '', pincode: '', country: 'India', isDefault: false });
     } catch (err: any) {
       Alert.alert('Error', err.message ?? 'Failed to save address');
     } finally {
       setIsSaving(false);
+    }
+  };
+
+  const handleUseCurrentLocation = async () => {
+    setIsLocating(true);
+    try {
+      const location = await captureCurrentAddressLocation();
+      setForm((current) => ({
+        ...current,
+        lat: location.lat,
+        lng: location.lng,
+        line1: current.line1?.trim() || [location.streetNumber, location.street].filter(Boolean).join(' '),
+        city: location.city || location.district || current.city,
+        state: location.region || current.state,
+        pincode: location.postalCode || current.pincode,
+        country: location.country || current.country || 'India',
+      }));
+      Alert.alert('Location added', 'We filled in the address details we could find. Please check them before saving.');
+    } catch (err) {
+      Alert.alert('Could not get location', err instanceof Error ? err.message : 'Please enter your address manually.');
+    } finally {
+      setIsLocating(false);
     }
   };
 
@@ -76,7 +106,7 @@ export default function AddressScreen({ navigation, route }: any) {
     ]);
   };
 
-  const LABELS = ['Home', 'Office', 'Other'];
+  const LABELS = isDealer ? ['Business', 'Office', 'Other'] : ['Home', 'Office', 'Other'];
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
@@ -110,6 +140,11 @@ export default function AddressScreen({ navigation, route }: any) {
       {showForm && (
         <View style={styles.form}>
           <Text style={styles.formTitle}>Add New Address</Text>
+          <TouchableOpacity style={styles.locationButton} onPress={() => void handleUseCurrentLocation()} disabled={isLocating}>
+            {isLocating ? <ActivityIndicator color={COLORS.primary} /> : <Ionicons name="locate-outline" size={19} color={COLORS.primary} />}
+            <Text style={styles.locationButtonText}>{isLocating ? 'Getting your location…' : 'Use my current location'}</Text>
+          </TouchableOpacity>
+          {form.lat != null && form.lng != null && <Text style={styles.locationHint}>Location saved: {form.lat.toFixed(5)}, {form.lng.toFixed(5)}</Text>}
 
           {/* Label */}
           <Text style={styles.label}>Label</Text>
@@ -174,7 +209,8 @@ export default function AddressScreen({ navigation, route }: any) {
   );
 }
 
-const styles = StyleSheet.create({
+function createStyles() {
+  const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: COLORS.background },
   content: { padding: SPACING.base, paddingBottom: 40 },
   addressCard: { backgroundColor: COLORS.surface, borderRadius: BORDER_RADIUS.xl, padding: SPACING.base, marginBottom: SPACING.sm, ...SHADOW.sm },
@@ -192,6 +228,9 @@ const styles = StyleSheet.create({
   addBtnText: { color: COLORS.primary, fontWeight: FONT_WEIGHT.semiBold, fontSize: FONT_SIZE.base },
   form: { backgroundColor: COLORS.surface, borderRadius: BORDER_RADIUS.xl, padding: SPACING.base, ...SHADOW.sm },
   formTitle: { fontSize: FONT_SIZE.lg, fontWeight: FONT_WEIGHT.bold, color: COLORS.text, marginBottom: SPACING.md },
+  locationButton: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8, padding: 12, borderRadius: BORDER_RADIUS.md, borderWidth: 1, borderColor: COLORS.primary, marginBottom: SPACING.md },
+  locationButtonText: { color: COLORS.primary, fontSize: FONT_SIZE.sm, fontWeight: FONT_WEIGHT.semiBold },
+  locationHint: { color: COLORS.textMuted, fontSize: FONT_SIZE.xs, marginTop: -SPACING.sm, marginBottom: SPACING.md },
   label: { fontSize: FONT_SIZE.sm, fontWeight: FONT_WEIGHT.semiBold, color: COLORS.textSecondary, marginBottom: 6 },
   labelRow: { flexDirection: 'row', gap: SPACING.sm, marginBottom: SPACING.md },
   labelChip: { paddingHorizontal: 16, paddingVertical: 8, borderRadius: BORDER_RADIUS.full, borderWidth: 1.5, borderColor: COLORS.border },
@@ -210,4 +249,7 @@ const styles = StyleSheet.create({
   saveBtnText: { color: COLORS.textOnPrimary, fontSize: FONT_SIZE.base, fontWeight: FONT_WEIGHT.bold },
   cancelBtn: { alignItems: 'center', marginTop: SPACING.md, padding: SPACING.sm },
   cancelBtnText: { color: COLORS.textMuted, fontSize: FONT_SIZE.base },
-});
+
+  });
+  return styles;
+}

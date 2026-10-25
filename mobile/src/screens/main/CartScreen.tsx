@@ -1,14 +1,18 @@
-import React from 'react';
+import { useAppTheme } from '../../context/ThemeContext';
+import React, { useCallback } from 'react';
 import {
   View, Text, StyleSheet, FlatList, TouchableOpacity,
   Image, Alert, ActivityIndicator,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useFocusEffect } from '@react-navigation/native';
 import { useAppStore } from '../../store/useAppStore';
 import { CartItem } from '../../types';
 import { COLORS, FONT_SIZE, FONT_WEIGHT, SPACING, BORDER_RADIUS, SHADOW, formatCurrency } from '../../utils/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import { versionImageUrl } from '../../utils/imageUrl';
 
 const FALLBACK_IMAGES: Record<string, string> = {
   'water-purifiers': 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&h=200&fit=crop',
@@ -19,8 +23,21 @@ const FALLBACK_IMAGES: Record<string, string> = {
 };
 
 export default function CartScreen() {
+  const styles = createStyles();
+  const { isDark } = useAppTheme();
+  void isDark;
+
+
   const navigation = useNavigation<any>();
-  const { cart, updateQuantity, removeFromCart, isCartLoading, isAuthenticated } = useAppStore();
+  const insets = useSafeAreaInsets();
+  const { cart, updateQuantity, removeFromCart, isCartLoading, isAuthenticated, user, loadCart } = useAppStore();
+  // The app uses a floating, absolutely positioned tab bar (62px high).
+  // Lift the checkout action above it so it remains visible on the cart tab.
+  const checkoutBarBottom = Math.max(insets.bottom, 12) + 62 + 12;
+
+  useFocusEffect(useCallback(() => {
+    if (user?.uid) void loadCart(user.uid);
+  }, [loadCart, user?.uid]));
 
   const handleRemove = (item: CartItem) => {
     Alert.alert('Remove Item', `Remove ${item.product.name} from cart?`, [
@@ -80,9 +97,10 @@ export default function CartScreen() {
           </View>
         }
         renderItem={({ item }) => {
-          const imageUrl = item.product.images?.[0] && !item.product.images[0].includes('demo')
+          const rawImageUrl = item.product.images?.[0] && !item.product.images[0].includes('demo')
             ? item.product.images[0]
             : FALLBACK_IMAGES[item.product.category] ?? FALLBACK_IMAGES['water-purifiers'];
+          const imageUrl = versionImageUrl(rawImageUrl, item.product.updatedAt);
           return (
             <View style={styles.cartItem}>
               <Image source={{ uri: imageUrl }} style={styles.itemImage} resizeMode='cover' />
@@ -110,7 +128,7 @@ export default function CartScreen() {
           );
         }}
       />
-      <View style={styles.checkoutBar}>
+      <View style={[styles.checkoutBar, { bottom: checkoutBarBottom }]}>
         <View>
           <Text style={styles.checkoutTotal}>{formatCurrency(cart.totalAmount + 99 + Math.round(cart.totalAmount * 0.18))}</Text>
           <Text style={styles.checkoutItems}>{cart.totalItems} items</Text>
@@ -124,14 +142,15 @@ export default function CartScreen() {
   );
 }
 
-const styles = StyleSheet.create({
+function createStyles() {
+  const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: COLORS.background },
   emptyContainer: { flex: 1, justifyContent: 'center', alignItems: 'center', gap: SPACING.md, backgroundColor: COLORS.background },
   emptyTitle: { fontSize: FONT_SIZE.xl, fontWeight: FONT_WEIGHT.bold, color: COLORS.surface },
   emptySubtitle: { fontSize: FONT_SIZE.sm, color: COLORS.borderLight },
   shopBtn: { backgroundColor: COLORS.primary, paddingHorizontal: SPACING.xl, paddingVertical: 12, borderRadius: BORDER_RADIUS.md },
   shopBtnText: { color: COLORS.textOnPrimary, fontWeight: FONT_WEIGHT.bold },
-  listContent: { padding: SPACING.base, paddingBottom: 120 },
+  listContent: { padding: SPACING.base, paddingBottom: 180 },
   cartItem: { flexDirection: 'row', backgroundColor: COLORS.surface, borderRadius: BORDER_RADIUS.lg, marginBottom: SPACING.sm, overflow: 'hidden', ...SHADOW.sm },
   itemImage: { width: 100, height: 100, backgroundColor: COLORS.surfaceAlt },
   itemContent: { flex: 1, padding: SPACING.sm },
@@ -152,9 +171,12 @@ const styles = StyleSheet.create({
   divider: { height: 1, backgroundColor: COLORS.border, marginVertical: SPACING.sm },
   totalLabel: { fontSize: FONT_SIZE.base, fontWeight: FONT_WEIGHT.bold, color: COLORS.text },
   totalValue: { fontSize: FONT_SIZE.xl, fontWeight: FONT_WEIGHT.extraBold, color: COLORS.primary },
-  checkoutBar: { position: 'absolute', bottom: 0, left: 0, right: 0, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', backgroundColor: COLORS.surface, padding: SPACING.base, paddingBottom: 28, borderTopWidth: 1, borderTopColor: COLORS.border, ...SHADOW.lg },
+  checkoutBar: { position: 'absolute', left: 0, right: 0, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', backgroundColor: COLORS.surface, padding: SPACING.base, paddingBottom: SPACING.base, borderTopWidth: 1, borderTopColor: COLORS.border, ...SHADOW.lg },
   checkoutTotal: { fontSize: FONT_SIZE.xl, fontWeight: FONT_WEIGHT.bold, color: COLORS.primary },
   checkoutItems: { fontSize: FONT_SIZE.xs, color: COLORS.textMuted },
   checkoutBtn: { flexDirection: 'row', alignItems: 'center', gap: 6, backgroundColor: COLORS.primary, paddingHorizontal: SPACING.xl, paddingVertical: 12, borderRadius: BORDER_RADIUS.full, ...SHADOW.md },
   checkoutBtnText: { color: COLORS.textOnPrimary, fontWeight: FONT_WEIGHT.bold, fontSize: FONT_SIZE.sm },
-});
+
+  });
+  return styles;
+}

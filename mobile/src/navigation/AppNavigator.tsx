@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, getFocusedRouteNameFromRoute, DarkTheme, DefaultTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { View, ActivityIndicator, StyleSheet } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
 
 import { useAppStore } from '../store/useAppStore';
 import { COLORS } from '../utils/theme';
+import { useAppTheme } from '../context/ThemeContext';
 
 // Auth Screens
 import LoginScreen from '../screens/auth/LoginScreen';
@@ -24,16 +26,15 @@ import OrderSuccessScreen from '../screens/main/OrderSuccessScreen';
 import OrderHistoryScreen from '../screens/main/OrderHistoryScreen';
 import OrderDetailScreen from '../screens/main/OrderDetailScreen';
 import ProfileScreen from '../screens/main/ProfileScreen';
+import EditProfileScreen from '../screens/main/EditProfileScreen';
 import AddressScreen from '../screens/main/AddressScreen';
 import ServiceBookingScreen from '../screens/main/ServiceBookingScreen';
 import SearchScreen from '../screens/main/SearchScreen';
 import NotificationsScreen from '../screens/main/NotificationsScreen';
-import DealerPendingScreen from '../screens/dealer/DealerPendingScreen';
 
 export type RootStackParamList = {
   Auth: undefined;
   Main: undefined;
-  DealerPending: undefined;
 };
 
 export type AuthStackParamList = {
@@ -63,6 +64,7 @@ export type HomeStackParamList = {
 
 export type ProfileStackParamList = {
   Profile: undefined;
+  EditProfile: undefined;
   Address: undefined;
   AddAddress: undefined;
   OrderHistory: undefined;
@@ -89,9 +91,10 @@ function HomeNavigator() {
   return (
     <HomeStack.Navigator
       screenOptions={{
-        headerStyle: { backgroundColor: COLORS.primaryDark },
-        headerTintColor: '#fff',
-        headerTitleStyle: { fontWeight: '700' },
+        headerStyle: { backgroundColor: COLORS.background },
+        headerTintColor: COLORS.text,
+        headerTitleStyle: { fontFamily: 'Georgia', fontWeight: '700' },
+        headerShadowVisible: false,
       }}
     >
       <HomeStack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
@@ -110,12 +113,14 @@ function ProfileNavigator() {
   return (
     <ProfileStack.Navigator
       screenOptions={{
-        headerStyle: { backgroundColor: COLORS.primaryDark },
-        headerTintColor: '#fff',
-        headerTitleStyle: { fontWeight: '700' },
+        headerStyle: { backgroundColor: COLORS.background },
+        headerTintColor: COLORS.text,
+        headerTitleStyle: { fontFamily: 'Georgia', fontWeight: '700' },
+        headerShadowVisible: false,
       }}
     >
       <ProfileStack.Screen name="Profile" component={ProfileScreen} options={{ title: 'My Profile' }} />
+      <ProfileStack.Screen name="EditProfile" component={EditProfileScreen} options={{ title: 'Edit Profile' }} />
       <ProfileStack.Screen name="Address" component={AddressScreen} options={{ title: 'Saved Addresses' }} />
       <ProfileStack.Screen name="AddAddress" component={AddressScreen} options={{ title: 'Add Address' }} />
       <ProfileStack.Screen name="OrderHistory" component={OrderHistoryScreen} options={{ title: 'My Orders' }} />
@@ -125,7 +130,27 @@ function ProfileNavigator() {
 }
 
 function MainTabNavigator() {
+  const styles = createStyles();
+  const { isDark } = useAppTheme();
   const { cart, unreadCount } = useAppStore();
+  const insets = useSafeAreaInsets();
+  const floatingTabBarStyle = {
+    position: 'absolute' as const,
+    left: 22,
+    right: 22,
+    bottom: Math.max(insets.bottom, 12),
+    height: 62,
+    paddingTop: 7,
+    paddingBottom: 7,
+    backgroundColor: COLORS.primaryDark,
+    borderTopWidth: 0,
+    borderRadius: 34,
+    elevation: 10,
+    shadowColor: '#000',
+    shadowOpacity: 0.18,
+    shadowRadius: 14,
+    shadowOffset: { width: 0, height: 5 },
+  };
 
   return (
     <Tab.Navigator
@@ -138,21 +163,25 @@ function MainTabNavigator() {
             OrdersTab: focused ? 'receipt' : 'receipt-outline',
             ProfileTab: focused ? 'person' : 'person-outline',
           };
-          return <Ionicons name={icons[route.name] as any} size={size} color={color} />;
+          return (
+            <View style={[styles.tabIconWrap, focused && styles.tabIconWrapActive]}>
+              <Ionicons name={icons[route.name] as any} size={20} color={focused ? COLORS.primary : '#F4F4F6'} />
+            </View>
+          );
         },
-        tabBarActiveTintColor: COLORS.primary,
-        tabBarInactiveTintColor: COLORS.textMuted,
-        tabBarStyle: {
-          backgroundColor: COLORS.surface,
-          borderTopColor: COLORS.border,
-          paddingBottom: 4,
-          height: 60,
-        },
-        tabBarLabelStyle: { fontSize: 11, fontWeight: '600' },
+        tabBarShowLabel: false,
+        tabBarActiveTintColor: '#fff',
+        tabBarInactiveTintColor: '#F4F4F6',
+        tabBarStyle: floatingTabBarStyle,
+        tabBarItemStyle: { height: 48 },
+        tabBarHideOnKeyboard: true,
         headerShown: false,
       })}
     >
-      <Tab.Screen name="HomeTab" component={HomeNavigator} options={{ title: 'Home' }} />
+      <Tab.Screen name="HomeTab" component={HomeNavigator} options={({ route }) => ({
+        title: 'Home',
+        tabBarStyle: (getFocusedRouteNameFromRoute(route) ?? 'Home') === 'Home' ? floatingTabBarStyle : { display: 'none' },
+      })} />
       <Tab.Screen name="SearchTab" component={SearchScreen} options={{ title: 'Search', headerShown: false }} />
       <Tab.Screen
         name="CartTab"
@@ -160,21 +189,27 @@ function MainTabNavigator() {
         options={{
           title: 'Cart',
           tabBarBadge: cart.totalItems > 0 ? cart.totalItems : undefined,
-          tabBarBadgeStyle: { backgroundColor: COLORS.accent },
+          tabBarBadgeStyle: { backgroundColor: COLORS.accent, color: COLORS.text },
           headerShown: true,
           headerTitle: 'My Cart',
-          headerStyle: { backgroundColor: COLORS.primaryDark },
-          headerTintColor: '#fff',
+          headerStyle: { backgroundColor: COLORS.background },
+          headerTintColor: COLORS.text,
+          headerShadowVisible: false,
         }}
       />
-      <Tab.Screen name="OrdersTab" component={OrderHistoryScreen} options={{ title: 'Orders', headerShown: true, headerTitle: 'My Orders', headerStyle: { backgroundColor: COLORS.primaryDark }, headerTintColor: '#fff' }} />
-      <Tab.Screen name="ProfileTab" component={ProfileNavigator} options={{ title: 'Profile' }} />
+      <Tab.Screen name="OrdersTab" component={OrderHistoryScreen} options={{ title: 'Orders', headerShown: true, headerTitle: 'My Orders', headerStyle: { backgroundColor: COLORS.background }, headerTintColor: COLORS.text, headerShadowVisible: false, headerTitleStyle: { fontFamily: 'Georgia', fontWeight: '700' } }} />
+      <Tab.Screen name="ProfileTab" component={ProfileNavigator} options={({ route }) => ({
+        title: 'Profile',
+        tabBarStyle: (getFocusedRouteNameFromRoute(route) ?? 'Profile') === 'Profile' ? floatingTabBarStyle : { display: 'none' },
+      })} />
     </Tab.Navigator>
   );
 }
 
 export default function AppNavigator() {
-  const { isLoading, isAuthenticated, isDealer, isDealerApproved, initAuth } = useAppStore();
+  const styles = createStyles();
+  const { isDark } = useAppTheme();
+  const { isLoading, isAuthenticated, initAuth } = useAppStore();
 
   useEffect(() => {
     const unsub = initAuth();
@@ -191,17 +226,12 @@ export default function AppNavigator() {
     );
   }
 
-  // Dealer awaiting approval
-  const showDealerPending = isAuthenticated && isDealer && !isDealerApproved;
-
   return (
-    <NavigationContainer>
-      <StatusBar style="light" />
+    <NavigationContainer theme={{ ...(isDark ? DarkTheme : DefaultTheme), colors: { ...(isDark ? DarkTheme.colors : DefaultTheme.colors), primary: COLORS.primary, background: COLORS.background, card: COLORS.surface, text: COLORS.text, border: COLORS.border, notification: COLORS.accent } }}>
+      <StatusBar style={isDark ? "light" : "dark"} />
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         {!isAuthenticated ? (
           <Stack.Screen name="Auth" component={AuthNavigator} />
-        ) : showDealerPending ? (
-          <Stack.Screen name="DealerPending" component={DealerPendingScreen} />
         ) : (
           <Stack.Screen name="Main" component={MainTabNavigator} />
         )}
@@ -210,11 +240,16 @@ export default function AppNavigator() {
   );
 }
 
-const styles = StyleSheet.create({
+function createStyles() {
+  return StyleSheet.create({
+  tabIconWrap: { width: 42, height: 42, borderRadius: 21, alignItems: 'center', justifyContent: 'center' },
+  tabIconWrapActive: { backgroundColor: '#fff' },
   loading: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: COLORS.background,
   },
-});
+  });
+}
+

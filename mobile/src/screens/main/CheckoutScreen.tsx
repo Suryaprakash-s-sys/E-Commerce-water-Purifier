@@ -1,3 +1,4 @@
+import { useAppTheme } from '../../context/ThemeContext';
 import React, { useState } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity,
@@ -16,7 +17,12 @@ type Props = {
   navigation: NativeStackNavigationProp<HomeStackParamList, 'Checkout'>;
 };
 
-export default function CheckoutScreen({ navigation }: Props) {
+export default function CheckoutScreen({
+ navigation }: Props) {
+  const styles = createStyles();
+  const { isDark } = useAppTheme();
+  void isDark;
+
   const { user, cart, clearCart, isDealer, isDealerApproved } = useAppStore();
   const [selectedAddressId, setSelectedAddressId] = useState<string>(
     user?.addresses?.find((a) => a.isDefault)?.id ?? user?.addresses?.[0]?.id ?? ''
@@ -214,7 +220,8 @@ export default function CheckoutScreen({ navigation }: Props) {
   );
 }
 
-const styles = StyleSheet.create({
+function createStyles() {
+  const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: COLORS.background },
   content: { padding: SPACING.base },
   testBanner: { flexDirection: 'row', alignItems: 'center', gap: 8, backgroundColor: COLORS.success + '15', borderRadius: BORDER_RADIUS.md, padding: SPACING.sm, marginBottom: SPACING.base, borderLeftWidth: 3, borderLeftColor: COLORS.success },
@@ -250,4 +257,7 @@ const styles = StyleSheet.create({
   payBtnDisabled: { opacity: 0.6 },
   payBtnText: { color: COLORS.textOnPrimary, fontSize: FONT_SIZE.base, fontWeight: FONT_WEIGHT.bold },
   secureNote: { textAlign: 'center', fontSize: FONT_SIZE.xs, color: COLORS.textMuted },
-});
+
+  });
+  return styles;
+}

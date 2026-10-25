@@ -1,3 +1,4 @@
+import { useAppTheme } from '../../context/ThemeContext';
 import React, { useState } from 'react';
 import {
   View, Text, TextInput, TouchableOpacity, StyleSheet,
@@ -13,7 +14,12 @@ type Props = {
   navigation: NativeStackNavigationProp<AuthStackParamList, 'Register'>;
 };
 
-export default function RegisterScreen({ navigation }: Props) {
+export default function RegisterScreen({
+ navigation }: Props) {
+  const styles = createStyles();
+  const { isDark } = useAppTheme();
+  void isDark;
+
   const [form, setForm] = useState({ name: '', email: '', phone: '', password: '', confirmPassword: '' });
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -126,7 +132,8 @@ export default function RegisterScreen({ navigation }: Props) {
   );
 }
 
-const styles = StyleSheet.create({
+function createStyles() {
+  const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: COLORS.primaryDark },
   scroll: { flexGrow: 1, paddingBottom: 40 },
   header: { paddingTop: 50, paddingBottom: 32, paddingHorizontal: SPACING.xl, alignItems: 'center' },
@@ -164,4 +171,7 @@ const styles = StyleSheet.create({
   loginLink: { alignItems: 'center', marginTop: SPACING.lg },
   loginLinkText: { fontSize: FONT_SIZE.sm, color: COLORS.textSecondary },
   loginLinkBold: { color: COLORS.primary, fontWeight: FONT_WEIGHT.bold },
-});
+
+  });
+  return styles;
+}

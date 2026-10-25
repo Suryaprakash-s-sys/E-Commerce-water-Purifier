@@ -1,2 +1,6 @@
 import AppNavigator from './src/navigation/AppNavigator';
-export default function App() { return <AppNavigator />; }
+import { ThemeProvider } from './src/context/ThemeContext';
+
+export default function App() {
+  return <ThemeProvider><AppNavigator /></ThemeProvider>;
+}

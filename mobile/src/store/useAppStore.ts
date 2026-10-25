@@ -69,6 +69,12 @@ export const useAppStore = create<AppStore>((set, get) => ({
         try {
           const profile = await authService.getUserProfile(firebaseUser.uid);
           const isDealer = profile?.role === 'dealer';
+          if (isDealer && (profile as DealerProfile)?.dealerStatus !== 'approved') {
+            // Also block pending or rejected dealer sessions restored after app relaunch.
+            await authService.signOut();
+            set({ isLoading: false, isAuthenticated: false, firebaseUser: null, user: null, isDealer: false, isAdmin: false, isDealerApproved: false });
+            return;
+          }
           const isAdmin = profile?.role === 'admin';
           const isDealerApproved =
             isDealer && (profile as DealerProfile)?.dealerStatus === 'approved';

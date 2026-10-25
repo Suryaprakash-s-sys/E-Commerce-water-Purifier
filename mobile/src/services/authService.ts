@@ -85,25 +85,34 @@ export const authService = {
       updatedAt: new Date(),
     };
 
-    await setDoc(doc(db, 'users', credential.user.uid), {
-      ...dealerDoc,
-      createdAt: serverTimestamp(),
-      updatedAt: serverTimestamp(),
-    });
+    try {
+      await setDoc(doc(db, 'users', credential.user.uid), {
+        ...dealerDoc,
+        createdAt: serverTimestamp(),
+        updatedAt: serverTimestamp(),
+      });
 
-    // Create dealer application record
-    await setDoc(doc(db, 'dealerApplications', credential.user.uid), {
-      uid: credential.user.uid,
-      email,
-      displayName,
-      businessName,
-      gstNumber,
-      phone,
-      status: 'pending',
-      appliedAt: serverTimestamp(),
-    });
+      // Create dealer application record
+      await setDoc(doc(db, 'dealerApplications', credential.user.uid), {
+        uid: credential.user.uid,
+        email,
+        displayName,
+        businessName,
+        gstNumber,
+        phone,
+        businessAddress,
+        status: 'pending',
+        appliedAt: serverTimestamp(),
+      });
 
-    return dealerDoc;
+      return dealerDoc;
+    } finally {
+      // Firebase signs the account in immediately after registration. Keep dealers
+      // signed out until an administrator approves their application.
+      if (auth.currentUser?.uid === credential.user.uid) {
+        await signOut(auth).catch(() => undefined);
+      }
+    }
   },
 
   /**
@@ -120,9 +129,12 @@ export const authService = {
     const userData = userSnap.data();
     
     // Check if dealer is approved
-    if (userData.role === 'dealer' && userData.dealerStatus === 'rejected') {
+    if (userData.role === 'dealer' && userData.dealerStatus !== 'approved') {
       await signOut(auth);
-      throw new Error('Your dealer application has been rejected. Please contact support.');
+      if (userData.dealerStatus === 'rejected') {
+        throw new Error('Your dealer application was rejected. Please contact support.');
+      }
+      throw new Error('Your dealer application is awaiting admin approval. You can sign in after it is approved.');
     }
 
     if (!userData.isActive) {
@@ -164,7 +176,7 @@ export const authService = {
   /**
    * Update user profile
    */
-  async updateProfile(uid: string, updates: Partial<User>): Promise<void> {
+  async updateProfile(uid: string, updates: Partial<User> & Partial<Pick<DealerProfile, 'businessName' | 'gstNumber' | 'businessAddress'>>): Promise<void> {
     await updateDoc(doc(db, 'users', uid), {
       ...updates,
       updatedAt: serverTimestamp(),
@@ -188,6 +200,7 @@ export const authService = {
     }
     await updateDoc(doc(db, 'users', uid), {
       addresses: updated,
+      ...(address.label === 'Business' ? { businessAddress: address } : {}),
       updatedAt: serverTimestamp(),
     });
   },

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "390828090793",
+    "project_id": "ecommerce-water-purifier",
+    "storage_bucket": "ecommerce-water-purifier.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:390828090793:android:64720d5470859ed44450b8",
+        "android_client_info": {
+          "package_name": "com.surya25s.califncowaterpurifier"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpuJmvJc1Jg3t9az6Osk3iPb0L9a40aUI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

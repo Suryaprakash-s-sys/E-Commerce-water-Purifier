@@ -15,13 +15,22 @@ async function uploadData() {
   let count = 0;
   
   for (const product of products) {
+    if (!product.id || !product.name || !Array.isArray(product.images) || product.images.length === 0) {
+      throw new Error(`Product is missing an id, name, or image URL: ${product.name || product.id || "unknown product"}`);
+    }
     // If your JSON has an "id" field, use it as the document ID. Otherwise, auto-generate one.
     const docRef = product.id 
       ? db.collection("products").doc(product.id) 
       : db.collection("products").doc();
       
     const { dealerPrice, ...publicProduct } = product;
-    await docRef.set(publicProduct);
+    const existing = await docRef.get();
+    const now = new Date();
+    await docRef.set({
+      ...publicProduct,
+      createdAt: existing.data()?.createdAt ?? now,
+      updatedAt: now,
+    });
     if (Number.isFinite(dealerPrice)) {
       await db.collection("dealerPrices").doc(docRef.id).set({ price: dealerPrice, updatedAt: new Date() });
     }

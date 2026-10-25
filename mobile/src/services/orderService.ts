@@ -21,19 +21,27 @@ export const orderService = {
    * Get orders for a user
    */
   async getUserOrders(userId: string): Promise<Order[]> {
-    const q = query(
-      collection(db, 'orders'),
-      where('userId', '==', userId),
-      orderBy('placedAt', 'desc'),
-      limit(50)
-    );
-    const snap = await getDocs(q);
+    const orders = collection(db, 'orders');
+    let snap;
+    try {
+      snap = await getDocs(query(
+        orders,
+        where('userId', '==', userId),
+        orderBy('placedAt', 'desc'),
+        limit(50),
+      ));
+    } catch (error) {
+      // The userId + placedAt composite index may not be deployed yet. Query by
+      // owner alone and sort locally so a valid order is still visible.
+      console.warn('Ordered order-history query failed; retrying without the composite index.', error);
+      snap = await getDocs(query(orders, where('userId', '==', userId), limit(50)));
+    }
     return snap.docs.map((d) => ({
       id: d.id,
       ...d.data(),
       placedAt: d.data().placedAt?.toDate?.() ?? new Date(),
       updatedAt: d.data().updatedAt?.toDate?.() ?? new Date(),
-    })) as Order[];
+    } as Order)).sort((a, b) => b.placedAt.getTime() - a.placedAt.getTime());
   },
 
   /**

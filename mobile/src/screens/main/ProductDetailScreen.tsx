@@ -1,7 +1,8 @@
+import { useAppTheme } from '../../context/ThemeContext';
 import React, { useEffect, useState } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity,
-  Image, Dimensions, Alert, ActivityIndicator,
+  Image, Dimensions, Alert, ActivityIndicator, Modal, StatusBar,
 } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RouteProp } from '@react-navigation/native';
@@ -11,8 +12,10 @@ import { useAppStore } from '../../store/useAppStore';
 import { Product } from '../../types';
 import { COLORS, FONTS, FONT_SIZE, FONT_WEIGHT, SPACING, BORDER_RADIUS, SHADOW, formatCurrency } from '../../utils/theme';
 import { Ionicons } from '@expo/vector-icons';
+import { versionImageUrl } from '../../utils/imageUrl';
 import { LinearGradient } from 'expo-linear-gradient';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import ImageViewer from 'react-native-image-zoom-viewer';
 
 const { width } = Dimensions.get('window');
 
@@ -29,7 +32,12 @@ const FALLBACK_IMAGES: Record<string, string> = {
   'spare-parts': 'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=600&h=400&fit=crop',
 };
 
-export default function ProductDetailScreen({ navigation, route }: Props) {
+export default function ProductDetailScreen({
+ navigation, route }: Props) {
+  const styles = createStyles();
+  const { isDark } = useAppTheme();
+  void isDark;
+
   const { productId } = route.params;
   const { isDealer, isDealerApproved, addToCart } = useAppStore();
   const isApprovedDealer = isDealer && isDealerApproved;
@@ -39,6 +47,8 @@ export default function ProductDetailScreen({ navigation, route }: Props) {
   const [quantity, setQuantity] = useState(1);
   const [addingToCart, setAddingToCart] = useState(false);
   const [activeTab, setActiveTab] = useState<'desc' | 'specs'>('desc');
+  const [imageViewerVisible, setImageViewerVisible] = useState(false);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   useEffect(() => {
     productService.getProduct(productId).then((p) => {
@@ -63,9 +73,13 @@ export default function ProductDetailScreen({ navigation, route }: Props) {
   const originalPrice = product.retailPrice;
   const discount = isApprovedDealer ? Math.round(((originalPrice - product.dealerPrice) / originalPrice) * 100) : 0;
 
-  const imageUrl = product.images?.[0] && !product.images[0].includes('demo')
-    ? product.images[0]
-    : FALLBACK_IMAGES[product.category] ?? FALLBACK_IMAGES['water-purifiers'];
+  const fallbackUrl = FALLBACK_IMAGES[product.category] ?? FALLBACK_IMAGES['water-purifiers'];
+  const validImages = product.images?.filter((img) => img && !img.includes('demo'));
+  const allImageUrls = (validImages?.length > 0 ? validImages : [fallbackUrl])
+    .map((url) => versionImageUrl(url, product.updatedAt));
+  const imageViewerImages = allImageUrls.map((url) => ({ url }));
+
+  const imageUrl = allImageUrls[0];
 
   const handleAddToCart = async () => {
     if (product.stock === 0) { Alert.alert('Out of Stock', 'This product is currently unavailable.'); return; }
@@ -85,10 +99,45 @@ export default function ProductDetailScreen({ navigation, route }: Props) {
 
   return (
     <View style={styles.container}>
+      {/* Full-screen Image Viewer Modal */}
+      <Modal visible={imageViewerVisible} transparent animationType="fade" onRequestClose={() => setImageViewerVisible(false)}>
+        <StatusBar barStyle="light-content" />
+        <ImageViewer
+          imageUrls={imageViewerImages}
+          index={activeImageIndex}
+          onCancel={() => setImageViewerVisible(false)}
+          enableSwipeDown
+          swipeDownThreshold={60}
+          backgroundColor="#000"
+          renderHeader={() => (
+            <TouchableOpacity style={styles.viewerClose} onPress={() => setImageViewerVisible(false)}>
+              <Ionicons name="close" size={26} color="#fff" />
+            </TouchableOpacity>
+          )}
+          renderIndicator={(currentIndex, allSize) =>
+            allSize != null && allSize > 1 ? (
+              <View style={styles.viewerIndicator}>
+                <Text style={styles.viewerIndicatorText}>{currentIndex} / {allSize}</Text>
+              </View>
+            ) : <View />
+          }
+        />
+      </Modal>
+
       <ScrollView showsVerticalScrollIndicator={false}>
         {/* Image */}
         <View style={styles.imageSection}>
-          <Image source={{ uri: imageUrl }} style={styles.productImage} resizeMode='cover' />
+          <TouchableOpacity
+            activeOpacity={0.9}
+            onPress={() => { setActiveImageIndex(0); setImageViewerVisible(true); }}
+          >
+            <Image source={{ uri: imageUrl }} style={styles.productImage} resizeMode='cover' />
+            {/* Expand hint */}
+            <View style={styles.expandHint}>
+              <Ionicons name="expand-outline" size={14} color="#fff" />
+              <Text style={styles.expandHintText}>Tap to expand</Text>
+            </View>
+          </TouchableOpacity>
           <TouchableOpacity style={styles.backBtn} onPress={() => navigation.goBack()}>
             <Ionicons name='arrow-back' size={22} color={COLORS.text} />
           </TouchableOpacity>
@@ -204,13 +253,19 @@ export default function ProductDetailScreen({ navigation, route }: Props) {
   );
 }
 
-const styles = StyleSheet.create({
+function createStyles() {
+  const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: COLORS.background },
   loading: { flex: 1, justifyContent: 'center', alignItems: 'center' },
   errorText: { color: COLORS.textMuted, fontSize: FONT_SIZE.base },
   imageSection: { position: 'relative', backgroundColor: '#fff' },
   productImage: { width: width, height: 300 },
   backBtn: { position: 'absolute', top: 44, left: 16, backgroundColor: '#fff', borderRadius: 20, width: 40, height: 40, alignItems: 'center', justifyContent: 'center', ...SHADOW.sm },
+  expandHint: { position: 'absolute', bottom: 10, right: 12, flexDirection: 'row', alignItems: 'center', gap: 4, backgroundColor: 'rgba(0,0,0,0.45)', borderRadius: BORDER_RADIUS.full, paddingHorizontal: 10, paddingVertical: 4 },
+  expandHintText: { color: '#fff', fontSize: 10, fontWeight: FONT_WEIGHT.semiBold },
+  viewerClose: { position: 'absolute', top: 48, right: 16, zIndex: 999, backgroundColor: 'rgba(0,0,0,0.55)', borderRadius: 22, width: 44, height: 44, alignItems: 'center', justifyContent: 'center' },
+  viewerIndicator: { position: 'absolute', bottom: 40, alignSelf: 'center', backgroundColor: 'rgba(0,0,0,0.5)', borderRadius: 12, paddingHorizontal: 12, paddingVertical: 4 },
+  viewerIndicatorText: { color: '#fff', fontSize: FONT_SIZE.sm },
   featuredBadge: { position: 'absolute', bottom: 12, left: 12, backgroundColor: '#F39C12', borderRadius: BORDER_RADIUS.sm, paddingHorizontal: 8, paddingVertical: 4 },
   featuredText: { color: '#fff', fontSize: FONT_SIZE.xs, fontWeight: FONT_WEIGHT.bold },
   discountBadge: { position: 'absolute', bottom: 12, right: 12, backgroundColor: COLORS.error, borderRadius: BORDER_RADIUS.sm, paddingHorizontal: 8, paddingVertical: 4 },
@@ -253,4 +308,7 @@ const styles = StyleSheet.create({
   addToCartBtn: { flexDirection: 'row', alignItems: 'center', gap: 8, backgroundColor: COLORS.primary, paddingHorizontal: SPACING.xl, height: 52, borderRadius: BORDER_RADIUS.full, ...SHADOW.md },
   btnDisabled: { opacity: 0.6 },
   addToCartText: { color: '#fff', fontSize: FONT_SIZE.base, fontWeight: FONT_WEIGHT.bold },
-});
+
+  });
+  return styles;
+}

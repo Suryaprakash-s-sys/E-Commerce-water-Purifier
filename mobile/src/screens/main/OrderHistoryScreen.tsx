@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { useAppTheme } from '../../context/ThemeContext';
+import React, { useCallback, useState } from 'react';
 import {
   View, Text, StyleSheet, FlatList, TouchableOpacity, ActivityIndicator,
 } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { orderService } from '../../services/orderService';
 import { useAppStore } from '../../store/useAppStore';
 import { Order } from '../../types';
@@ -10,21 +11,32 @@ import { COLORS, FONT_SIZE, FONT_WEIGHT, SPACING, BORDER_RADIUS, SHADOW, formatC
 import { Ionicons } from '@expo/vector-icons';
 
 export default function OrderHistoryScreen() {
+  const styles = createStyles();
+  const { isDark } = useAppTheme();
+  void isDark;
+
+
   const navigation = useNavigation<any>();
   const { user, isAuthenticated } = useAppStore();
   const [orders, setOrders] = useState<Order[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [loadError, setLoadError] = useState('');
 
-  useEffect(() => {
-    if (user) {
-      orderService.getUserOrders(user.uid).then((o) => {
-        setOrders(o);
-        setIsLoading(false);
-      });
-    } else {
+  const loadOrders = useCallback(async () => {
+    if (!user) { setOrders([]); setIsLoading(false); return; }
+    setIsLoading(true);
+    setLoadError('');
+    try {
+      setOrders(await orderService.getUserOrders(user.uid));
+    } catch (error) {
+      console.error('Could not load order history:', error);
+      setLoadError(error instanceof Error ? error.message : 'Please check your connection and try again.');
+    } finally {
       setIsLoading(false);
     }
-  }, [user]);
+  }, [user?.uid]);
+
+  useFocusEffect(useCallback(() => { void loadOrders(); }, [loadOrders]));
 
   if (!isAuthenticated) {
     return <View style={styles.center}><Text style={styles.mutedText}>Please sign in to view orders</Text></View>;
@@ -37,12 +49,14 @@ export default function OrderHistoryScreen() {
   if (orders.length === 0) {
     return (
       <View style={styles.center}>
-        <Ionicons name='receipt-outline' size={64} color={COLORS.textLight} />
-        <Text style={styles.emptyTitle}>No Orders Yet</Text>
-        <Text style={styles.mutedText}>Your order history will appear here</Text>
-        <TouchableOpacity style={styles.shopBtn} onPress={() => navigation.navigate('HomeTab')}>
-          <Text style={styles.shopBtnText}>Start Shopping</Text>
-        </TouchableOpacity>
+        <Ionicons name={loadError ? 'cloud-offline-outline' : 'receipt-outline'} size={64} color={COLORS.textLight} />
+        <Text style={styles.emptyTitle}>{loadError ? 'Could not load orders' : 'No Orders Yet'}</Text>
+        <Text style={styles.mutedText}>{loadError || 'Your order history will appear here'}</Text>
+        {loadError ? (
+          <TouchableOpacity style={styles.shopBtn} onPress={() => void loadOrders()}><Text style={styles.shopBtnText}>Try Again</Text></TouchableOpacity>
+        ) : (
+          <TouchableOpacity style={styles.shopBtn} onPress={() => navigation.navigate('HomeTab')}><Text style={styles.shopBtnText}>Start Shopping</Text></TouchableOpacity>
+        )}
       </View>
     );
   }
@@ -92,7 +106,8 @@ export default function OrderHistoryScreen() {
   );
 }
 
-const styles = StyleSheet.create({
+function createStyles() {
+  const styles = StyleSheet.create({
   center: { flex: 1, justifyContent: 'center', alignItems: 'center', gap: SPACING.md, backgroundColor: COLORS.background },
   emptyTitle: { fontSize: FONT_SIZE.xl, fontWeight: FONT_WEIGHT.bold, color: COLORS.text },
   mutedText: { fontSize: FONT_SIZE.sm, color: COLORS.textMuted },
@@ -112,4 +127,7 @@ const styles = StyleSheet.create({
   orderTotal: { fontSize: FONT_SIZE.base, fontWeight: FONT_WEIGHT.bold, color: COLORS.primary },
   chevron: { flexDirection: 'row', alignItems: 'center', gap: 2 },
   viewDetails: { fontSize: FONT_SIZE.sm, color: COLORS.primary, fontWeight: FONT_WEIGHT.semiBold },
-});
+
+  });
+  return styles;
+}

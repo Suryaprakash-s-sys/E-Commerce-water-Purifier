@@ -1,7 +1,8 @@
+import { useAppTheme } from '../../context/ThemeContext';
 import React, { useState, useEffect, useCallback } from 'react';
 import {
   View, Text, StyleSheet, FlatList, TouchableOpacity,
-  TextInput, ActivityIndicator, ScrollView,
+  TextInput, ActivityIndicator, ScrollView, useWindowDimensions,
 } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RouteProp } from '@react-navigation/native';
@@ -27,7 +28,14 @@ const SORT_OPTIONS: { label: string; value: ProductSortOption }[] = [
   { label: 'Most Popular', value: 'popular' },
 ];
 
-export default function ProductListScreen({ navigation, route }: Props) {
+export default function ProductListScreen({
+ navigation, route }: Props) {
+  const styles = createStyles();
+  const { isDark } = useAppTheme();
+  void isDark;
+
+  const { width: screenWidth } = useWindowDimensions();
+  const productCardWidth = screenWidth - SPACING.base * 2;
   const { isDealer, isDealerApproved } = useAppStore();
   const { category, title } = route.params ?? {};
   const featuredOnly = route.params?.featured ?? title?.toLowerCase() === 'featured';
@@ -87,9 +95,9 @@ export default function ProductListScreen({ navigation, route }: Props) {
       <View style={styles.sortBar}>
         <Text style={styles.resultCount}>{products.length} products</Text>
         <TouchableOpacity style={styles.sortBtn} onPress={() => setShowSort(!showSort)}>
-          <Ionicons name='funnel-outline' size={16} color={COLORS.primary} />
+          <Ionicons name='funnel-outline' size={16} color={COLORS.text} />
           <Text style={styles.sortBtnText}>{SORT_OPTIONS.find((s) => s.value === sort)?.label}</Text>
-          <Ionicons name={showSort ? 'chevron-up' : 'chevron-down'} size={14} color={COLORS.primary} />
+          <Ionicons name={showSort ? 'chevron-up' : 'chevron-down'} size={14} color={COLORS.text} />
         </TouchableOpacity>
       </View>
 
@@ -104,7 +112,7 @@ export default function ProductListScreen({ navigation, route }: Props) {
               <Text style={[styles.sortOptionText, sort === opt.value && styles.sortOptionTextActive]}>
                 {opt.label}
               </Text>
-              {sort === opt.value && <Ionicons name='checkmark' size={16} color={COLORS.primary} />}
+              {sort === opt.value && <Ionicons name='checkmark' size={16} color={COLORS.text} />}
             </TouchableOpacity>
           ))}
         </View>
@@ -121,8 +129,6 @@ export default function ProductListScreen({ navigation, route }: Props) {
         <FlatList
           data={products}
           keyExtractor={(item) => item.id}
-          numColumns={2}
-          columnWrapperStyle={styles.columnWrapper}
           contentContainerStyle={styles.listContent}
           showsVerticalScrollIndicator={false}
           onEndReached={() => hasMore && !isLoadingMore && loadProducts(false)}
@@ -134,7 +140,7 @@ export default function ProductListScreen({ navigation, route }: Props) {
               isDealer={isApprovedDealer}
               onPress={() => navigation.navigate('ProductDetail', { productId: item.id })}
               onAddToCart={() => handleAddToCart(item)}
-              style={{ width: '100%' }}
+              style={{ width: productCardWidth, marginBottom: SPACING.md }}
             />
           )}
         />
@@ -143,12 +149,13 @@ export default function ProductListScreen({ navigation, route }: Props) {
   );
 }
 
-const styles = StyleSheet.create({
+function createStyles() {
+  const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: COLORS.background },
-  sortBar: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: SPACING.base, backgroundColor: COLORS.surface, borderBottomWidth: 1, borderBottomColor: COLORS.border },
+  sortBar: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: SPACING.base, backgroundColor: COLORS.background, borderBottomWidth: 1, borderBottomColor: COLORS.borderLight },
   resultCount: { fontFamily: FONTS.regular, fontSize: FONT_SIZE.sm, color: COLORS.textMuted },
-  sortBtn: { flexDirection: 'row', alignItems: 'center', gap: 4, backgroundColor: COLORS.primary + '15', paddingHorizontal: 10, paddingVertical: 6, borderRadius: BORDER_RADIUS.full },
-  sortBtnText: { fontFamily: FONTS.medium, fontSize: FONT_SIZE.sm, color: COLORS.primary, fontWeight: FONT_WEIGHT.semiBold },
+  sortBtn: { flexDirection: 'row', alignItems: 'center', gap: 6, backgroundColor: COLORS.surface, paddingHorizontal: 14, paddingVertical: 9, borderRadius: BORDER_RADIUS.full },
+  sortBtnText: { fontFamily: FONTS.medium, fontSize: FONT_SIZE.sm, color: COLORS.text, fontWeight: FONT_WEIGHT.semiBold },
   sortDropdown: { backgroundColor: COLORS.surface, borderBottomWidth: 1, borderBottomColor: COLORS.border, ...SHADOW.md },
   sortOption: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: SPACING.base, borderBottomWidth: 1, borderBottomColor: COLORS.borderLight },
   sortOptionActive: { backgroundColor: COLORS.primary + '10' },
@@ -156,7 +163,9 @@ const styles = StyleSheet.create({
   sortOptionTextActive: { color: COLORS.primary, fontWeight: FONT_WEIGHT.semiBold },
   loading: { flex: 1, justifyContent: 'center', alignItems: 'center' },
   empty: { flex: 1, justifyContent: 'center', alignItems: 'center', gap: SPACING.md },
-  emptyText: { fontFamily: FONTS.regular, fontSize: FONT_SIZE.base, color: COLORS.surface },
-  columnWrapper: { gap: SPACING.sm, paddingHorizontal: SPACING.base },
-  listContent: { padding: SPACING.sm, paddingTop: SPACING.base },
-});
+  emptyText: { fontFamily: FONTS.regular, fontSize: FONT_SIZE.base, color: COLORS.textSecondary },
+  listContent: { paddingHorizontal: SPACING.base, paddingTop: SPACING.base, paddingBottom: SPACING.xl },
+
+  });
+  return styles;
+}

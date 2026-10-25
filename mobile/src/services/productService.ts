@@ -1,15 +1,21 @@
 import {
   collection,
+  DocumentData,
+  DocumentReference,
+  DocumentSnapshot,
   doc,
   getDoc,
+  getDocFromServer,
   getDocs,
+  getDocsFromServer,
   query,
   where,
   orderBy,
   limit,
   startAfter,
-  DocumentSnapshot,
   QueryConstraint,
+  Query,
+  QuerySnapshot,
 } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import { auth } from '../config/firebase';
@@ -17,6 +23,29 @@ import { Product, ProductCategory, ProductFilters, ProductSortOption, PaginatedR
 
 const PAGE_SIZE = 20;
 let dealerPriceCache: { uid: string; expiresAt: number; prices: Map<string, number> } | null = null;
+
+function isOfflineReadError(error: unknown): boolean {
+  const code = (error as { code?: string } | null)?.code;
+  return code === 'unavailable' || code === 'deadline-exceeded';
+}
+
+async function getFreshDocs(q: Query<DocumentData>): Promise<QuerySnapshot<DocumentData>> {
+  try {
+    return await getDocsFromServer(q);
+  } catch (error) {
+    if (!isOfflineReadError(error)) throw error;
+    return getDocs(q);
+  }
+}
+
+async function getFreshDoc(ref: DocumentReference<DocumentData>): Promise<DocumentSnapshot<DocumentData>> {
+  try {
+    return await getDocFromServer(ref);
+  } catch (error) {
+    if (!isOfflineReadError(error)) throw error;
+    return getDoc(ref);
+  }
+}
 
 function toDate(value: unknown): Date {
   if (value instanceof Date) return value;
@@ -131,7 +160,7 @@ export const productService = {
     }
 
     const q = query(collection(db, 'products'), ...constraints);
-    const snap = await getDocs(q);
+    const snap = await getFreshDocs(q);
 
     let items = await attachDealerPrices(snap.docs.map((d) => mapProduct(d.id, d.data())));
     let hasMore = snap.docs.length > PAGE_SIZE;
@@ -183,7 +212,7 @@ export const productService = {
       where('isFeatured', '==', true),
       limit(10)
     );
-    const snap = await getDocs(q);
+    const snap = await getFreshDocs(q);
     return attachDealerPrices(snap.docs.map((d) => mapProduct(d.id, d.data())));
   },
 
@@ -191,7 +220,7 @@ export const productService = {
    * Get single product
    */
   async getProduct(id: string): Promise<Product | null> {
-    const snap = await getDoc(doc(db, 'products', id));
+    const snap = await getFreshDoc(doc(db, 'products', id));
     if (!snap.exists()) return null;
     const [product] = await attachDealerPrices([mapProduct(snap.id, snap.data() as Record<string, unknown>)]);
     return product;
@@ -209,7 +238,7 @@ export const productService = {
       orderBy('name'),
       limit(200)
     );
-    const snap = await getDocs(q);
+    const snap = await getFreshDocs(q);
     const term = searchTerm.toLowerCase();
     const products = await attachDealerPrices(snap.docs.map((d) => mapProduct(d.id, d.data())));
     return products
@@ -233,7 +262,7 @@ export const productService = {
       orderBy('rating', 'desc'),
       limit(50)
     );
-    const snap = await getDocs(q);
+    const snap = await getFreshDocs(q);
     return attachDealerPrices(snap.docs.map((d) => mapProduct(d.id, d.data())));
   },
 

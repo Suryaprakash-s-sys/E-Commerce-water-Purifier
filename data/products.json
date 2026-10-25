@@ -1,1243 +1,1372 @@
 [
   {
     "id": "p001",
-    "name": "AquaPure RO UV UF TDS 10L Water Purifier",
+    "name": "AquaPure RO+UV 10L Water Purifier",
     "category": "water-purifiers",
-    "brand": "AquaPure",
-    "description": "Advanced 7-stage purification with RO, UV, UF and TDS controller. Suitable for all water sources. 10L storage tank.",
+    "brand": "Califnco",
+    "description": "AquaPure RO+UV 10L Water Purifier. Califnco water purifiers product. Check the product details and compatibility before ordering.",
     "retailPrice": 12999,
     "dealerPrice": 9500,
     "stock": 45,
     "rating": 4.5,
     "reviewCount": 234,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/water-purifier-ro-1.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/aquapure-ro-uv-10l-water-purifier.jpg"
     ],
-    "tags": ["RO", "UV", "UF", "TDS Controller"],
+    "tags": [
+      "water purifiers",
+      "RO",
+      "UV"
+    ],
     "specifications": {
-      "Purification": "RO+UV+UF+TDS Controller",
-      "Storage": "10 Liters",
-      "Input Water Type": "All water types",
-      "Purification Rate": "15 Liters/Hour",
-      "Warranty": "1 Year"
+      "Category": "water purifiers",
+      "Product": "AquaPure RO+UV 10L Water Purifier",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": true
   },
   {
     "id": "p002",
-    "name": "HydroGuard 8L RO Water Purifier with Mineralizer",
+    "name": "HydroGuard RO+UV+UF 8L Water Purifier",
     "category": "water-purifiers",
-    "brand": "HydroGuard",
-    "description": "Premium RO purifier with mineral retention technology. Keeps essential minerals while removing impurities.",
+    "brand": "Califnco",
+    "description": "HydroGuard RO+UV+UF 8L Water Purifier. Califnco water purifiers product. Check the product details and compatibility before ordering.",
     "retailPrice": 9999,
     "dealerPrice": 7200,
     "stock": 60,
     "rating": 4.3,
     "reviewCount": 189,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/water-purifier-ro-2.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/hydroguard-ro-uv-uf-8l-water-purifier.jpg"
     ],
-    "tags": ["RO", "Mineralizer"],
+    "tags": [
+      "water purifiers",
+      "RO",
+      "UV",
+      "UF"
+    ],
     "specifications": {
-      "Purification": "RO + Mineralizer",
-      "Storage": "8 Liters",
-      "Warranty": "2 Years"
+      "Category": "water purifiers",
+      "Product": "HydroGuard RO+UV+UF 8L Water Purifier",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": true
   },
   {
     "id": "p003",
-    "name": "PureFlow Gravity Water Purifier 15L",
+    "name": "ClearFlow RO+UV 7L Water Purifier",
     "category": "water-purifiers",
-    "brand": "PureFlow",
-    "description": "Non-electric gravity-based purifier ideal for areas with no electricity. Advanced UF membrane technology.",
+    "brand": "Califnco",
+    "description": "ClearFlow RO+UV 7L Water Purifier. Califnco water purifiers product. Check the product details and compatibility before ordering.",
     "retailPrice": 3499,
     "dealerPrice": 2500,
     "stock": 80,
     "rating": 4.1,
     "reviewCount": 312,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/gravity-purifier.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/clearflow-ro-uv-7l-water-purifier.jpg"
     ],
-    "tags": ["Non-Electric", "Gravity", "UF"],
+    "tags": [
+      "water purifiers",
+      "RO",
+      "UV"
+    ],
     "specifications": {
-      "Purification": "UF + Activated Carbon",
-      "Storage": "15 Liters",
-      "Power": "None (Gravity-based)",
-      "Warranty": "1 Year"
+      "Category": "water purifiers",
+      "Product": "ClearFlow RO+UV 7L Water Purifier",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p004",
-    "name": "TurboClear UV Water Purifier 7L",
+    "name": "PureLife UV 8L Water Purifier",
     "category": "water-purifiers",
-    "brand": "TurboClear",
-    "description": "UV-based water purifier kills 99.9% of bacteria and viruses. Best for municipal water sources.",
+    "brand": "Califnco",
+    "description": "PureLife UV 8L Water Purifier. Califnco water purifiers product. Check the product details and compatibility before ordering.",
     "retailPrice": 6499,
     "dealerPrice": 4800,
     "stock": 35,
     "rating": 4.4,
     "reviewCount": 145,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/uv-purifier.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/purelIfe-uv-8l-water-purifier.jpg"
     ],
-    "tags": ["UV", "Anti-Bacterial"],
+    "tags": [
+      "water purifiers",
+      "UV"
+    ],
     "specifications": {
-      "Purification": "UV + UF",
-      "Storage": "7 Liters",
-      "Power": "60W",
-      "Warranty": "1 Year"
+      "Category": "water purifiers",
+      "Product": "PureLife UV 8L Water Purifier",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p005",
-    "name": "AquaCool Hot & Cold Water Dispenser",
-    "category": "dispensers",
-    "brand": "AquaCool",
-    "description": "Top-loading water dispenser with hot and cold functionality. Perfect for office and home use.",
+    "name": "AquaShield RO+UF 10L Water Purifier",
+    "category": "water-purifiers",
+    "brand": "Califnco",
+    "description": "AquaShield RO+UF 10L Water Purifier. Califnco water purifiers product. Check the product details and compatibility before ordering.",
     "retailPrice": 7999,
     "dealerPrice": 5800,
     "stock": 25,
     "rating": 4.2,
     "reviewCount": 98,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/water-dispenser.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/aquashield-ro-uf-10l-water-purifier.jpg"
     ],
-    "tags": ["Hot & Cold", "Top-Load"],
+    "tags": [
+      "water purifiers",
+      "RO",
+      "UF"
+    ],
     "specifications": {
-      "Type": "Top Loading",
-      "Hot Water": "Yes",
-      "Cold Water": "Yes",
-      "Normal Water": "Yes",
-      "Warranty": "1 Year"
+      "Category": "water purifiers",
+      "Product": "AquaShield RO+UF 10L Water Purifier",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
-    "isFeatured": true
+    "isFeatured": false
   },
   {
     "id": "p006",
-    "name": "CoolStream Bottom Load Water Dispenser",
-    "category": "dispensers",
-    "brand": "CoolStream",
-    "description": "Elegant bottom-loading design. No lifting heavy water bottles. LED temperature indicators.",
+    "name": "CrystalDrop RO+UV Copper Water Purifier",
+    "category": "water-purifiers",
+    "brand": "Califnco",
+    "description": "CrystalDrop RO+UV Copper Water Purifier. Califnco water purifiers product. Check the product details and compatibility before ordering.",
     "retailPrice": 11999,
     "dealerPrice": 8800,
     "stock": 20,
     "rating": 4.6,
     "reviewCount": 67,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/bottom-load-dispenser.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/crystaldrop-ro-uv-copper-water-purifier.jpg"
     ],
-    "tags": ["Bottom-Load", "LED Indicator"],
+    "tags": [
+      "water purifiers",
+      "RO",
+      "UV"
+    ],
     "specifications": {
-      "Type": "Bottom Loading",
-      "Hot Water": "Yes",
-      "Cold Water": "Yes",
-      "Warranty": "2 Years"
+      "Category": "water purifiers",
+      "Product": "CrystalDrop RO+UV Copper Water Purifier",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p007",
-    "name": "FlowMaster Submersible Water Pump 1HP",
-    "category": "pumps",
-    "brand": "FlowMaster",
-    "description": "Heavy-duty submersible pump for deep wells and bore wells. Self-priming with thermal overload protection.",
+    "name": "BlueSpring RO+UV Alkaline Water Purifier",
+    "category": "water-purifiers",
+    "brand": "Califnco",
+    "description": "BlueSpring RO+UV Alkaline Water Purifier. Califnco water purifiers product. Check the product details and compatibility before ordering.",
     "retailPrice": 4999,
     "dealerPrice": 3600,
     "stock": 40,
     "rating": 4.3,
     "reviewCount": 78,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/submersible-pump.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/bluespring-ro-uv-alkaline-water-purifier.jpg"
     ],
-    "tags": ["Submersible", "1HP", "Deep Well"],
+    "tags": [
+      "water purifiers",
+      "RO",
+      "UV"
+    ],
     "specifications": {
-      "Power": "1 HP",
-      "Head": "Up to 45m",
-      "Discharge": "1600 LPH",
-      "Warranty": "1 Year"
+      "Category": "water purifiers",
+      "Product": "BlueSpring RO+UV Alkaline Water Purifier",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p008",
-    "name": "JetPump Self-Priming Monoblock Pump 0.5HP",
-    "category": "pumps",
-    "brand": "JetPump",
-    "description": "Compact monoblock pump for domestic water supply. Energy efficient with silent operation.",
+    "name": "SmartPure RO+UV Hot and Cold Water Purifier",
+    "category": "water-purifiers",
+    "brand": "Califnco",
+    "description": "SmartPure RO+UV Hot and Cold Water Purifier. Califnco water purifiers product. Check the product details and compatibility before ordering.",
     "retailPrice": 3299,
     "dealerPrice": 2400,
     "stock": 55,
-    "rating": 4.0,
+    "rating": 4,
     "reviewCount": 134,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/monoblock-pump.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/smartpure-ro-uv-hot-cold-water-purifier.jpg"
     ],
-    "tags": ["Monoblock", "0.5HP", "Self-Priming"],
+    "tags": [
+      "water purifiers",
+      "RO",
+      "UV"
+    ],
     "specifications": {
-      "Power": "0.5 HP",
-      "Head": "Up to 25m",
-      "Discharge": "1800 LPH",
-      "Warranty": "1 Year"
+      "Category": "water purifiers",
+      "Product": "SmartPure RO+UV Hot and Cold Water Purifier",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p009",
-    "name": "PureSediment PP Spun Filter Cartridge 10 inch",
-    "category": "filters",
-    "brand": "PureSediment",
-    "description": "5 micron PP spun filter for pre-filtration. Removes dirt, sand, rust and sediments effectively.",
+    "name": "EcoWave Gravity Water Purifier",
+    "category": "water-purifiers",
+    "brand": "Califnco",
+    "description": "EcoWave Gravity Water Purifier. Califnco water purifiers product. Check the product details and compatibility before ordering.",
     "retailPrice": 299,
     "dealerPrice": 180,
     "stock": 500,
     "rating": 4.2,
     "reviewCount": 456,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/sediment-filter.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/ecowave-gravity-water-purifier.jpg"
     ],
-    "tags": ["Sediment", "5 Micron", "Pre-Filter"],
+    "tags": [
+      "water purifiers"
+    ],
     "specifications": {
-      "Size": "10 inch",
-      "Micron": "5",
-      "Material": "PP Spun",
-      "Life": "3-6 Months"
+      "Category": "water purifiers",
+      "Product": "EcoWave Gravity Water Purifier",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p010",
-    "name": "CarbonPure Activated Carbon Block Filter",
-    "category": "filters",
-    "brand": "CarbonPure",
-    "description": "High-capacity activated carbon block filter removes chlorine, taste, odor and organic contaminants.",
+    "name": "FreshSip Countertop UV Water Purifier",
+    "category": "water-purifiers",
+    "brand": "Califnco",
+    "description": "FreshSip Countertop UV Water Purifier. Califnco water purifiers product. Check the product details and compatibility before ordering.",
     "retailPrice": 499,
     "dealerPrice": 320,
     "stock": 300,
     "rating": 4.4,
     "reviewCount": 289,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/carbon-filter.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/freshsip-countertop-uv-water-purifier.jpg"
     ],
-    "tags": ["Carbon Block", "Chlorine Removal"],
+    "tags": [
+      "water purifiers",
+      "UV"
+    ],
     "specifications": {
-      "Size": "10 inch",
-      "Type": "Carbon Block",
-      "Life": "6-12 Months"
+      "Category": "water purifiers",
+      "Product": "FreshSip Countertop UV Water Purifier",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p011",
-    "name": "RO Membrane 75 GPD Thin Film Composite",
-    "category": "spare-parts",
-    "brand": "MembraTec",
-    "description": "High-rejection TFC RO membrane. Removes 98% of TDS, heavy metals, and dissolved impurities.",
+    "name": "AquaMax Commercial RO Water Purifier",
+    "category": "water-purifiers",
+    "brand": "Califnco",
+    "description": "AquaMax Commercial RO Water Purifier. Califnco water purifiers product. Check the product details and compatibility before ordering.",
     "retailPrice": 1499,
     "dealerPrice": 950,
     "stock": 200,
     "rating": 4.5,
     "reviewCount": 178,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/ro-membrane.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/aquamax-commercial-ro-water-purifier.jpg"
     ],
-    "tags": ["RO Membrane", "75 GPD", "TFC"],
+    "tags": [
+      "water purifiers",
+      "RO"
+    ],
     "specifications": {
-      "Capacity": "75 GPD",
-      "Rejection Rate": "98%",
-      "Type": "TFC",
-      "Life": "12-24 Months"
+      "Category": "water purifiers",
+      "Product": "AquaMax Commercial RO Water Purifier",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p012",
-    "name": "UV Lamp 11W Sterilization Bulb",
-    "category": "spare-parts",
-    "brand": "UVGuard",
-    "description": "Replacement UV lamp for all standard water purifiers. 11W power for effective sterilization.",
+    "name": "PureHome Wall-Mount Water Purifier",
+    "category": "water-purifiers",
+    "brand": "Califnco",
+    "description": "PureHome Wall-Mount Water Purifier. Califnco water purifiers product. Check the product details and compatibility before ordering.",
     "retailPrice": 599,
     "dealerPrice": 380,
     "stock": 150,
     "rating": 4.3,
     "reviewCount": 92,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/uv-lamp.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/purehome-wall-mount-water-purifier.jpg"
     ],
-    "tags": ["UV Lamp", "11W", "Replacement"],
+    "tags": [
+      "water purifiers"
+    ],
     "specifications": {
-      "Power": "11W",
-      "Life": "8000 Hours",
-      "Compatibility": "Universal"
+      "Category": "water purifiers",
+      "Product": "PureHome Wall-Mount Water Purifier",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p013",
-    "name": "SMPS Power Supply 24V for RO Purifier",
-    "category": "spare-parts",
-    "brand": "PowerSafe",
-    "description": "Switching mode power supply for RO water purifiers. Input 100-240V AC, Output 24V DC 2A.",
+    "name": "CrystalCare Under-Sink RO Water Purifier",
+    "category": "water-purifiers",
+    "brand": "Califnco",
+    "description": "CrystalCare Under-Sink RO Water Purifier. Califnco water purifiers product. Check the product details and compatibility before ordering.",
     "retailPrice": 399,
     "dealerPrice": 250,
     "stock": 120,
     "rating": 4.1,
     "reviewCount": 63,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/smps-adapter.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/crystalcare-under-sink-ro-water-purifier.jpg"
     ],
-    "tags": ["SMPS", "24V", "Power Supply"],
+    "tags": [
+      "water purifiers",
+      "RO"
+    ],
     "specifications": {
-      "Input": "100-240V AC",
-      "Output": "24V DC 2A",
-      "Warranty": "6 Months"
+      "Category": "water purifiers",
+      "Product": "CrystalCare Under-Sink RO Water Purifier",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p014",
-    "name": "TDS Meter Digital Water Quality Tester",
-    "category": "spare-parts",
-    "brand": "TDSCheck",
-    "description": "Professional digital TDS meter for testing water purity. Range 0-9990 ppm with temperature display.",
+    "name": "HydroPlus 12L Storage Water Purifier",
+    "category": "water-purifiers",
+    "brand": "Califnco",
+    "description": "HydroPlus 12L Storage Water Purifier. Califnco water purifiers product. Check the product details and compatibility before ordering.",
     "retailPrice": 349,
     "dealerPrice": 220,
     "stock": 250,
     "rating": 4.6,
     "reviewCount": 521,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/tds-meter.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/hydroplus-12l-storage-water-purifier.jpg"
     ],
-    "tags": ["TDS Meter", "Digital", "Water Testing"],
+    "tags": [
+      "water purifiers",
+      "RO"
+    ],
     "specifications": {
-      "Range": "0-9990 ppm",
-      "Accuracy": "±2%",
-      "Temperature": "Yes",
-      "Battery": "2x 1.5V AAA"
+      "Category": "water purifiers",
+      "Product": "HydroPlus 12L Storage Water Purifier",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
-    "isFeatured": true
+    "isFeatured": false
   },
   {
     "id": "p015",
-    "name": "AquaElite 12L RO UV Water Purifier with Alkaline",
+    "name": "MineralFresh RO+UV Water Purifier",
     "category": "water-purifiers",
-    "brand": "AquaElite",
-    "description": "Premium 8-stage purifier with alkaline enhancement. Produces healthy alkaline water with optimal pH.",
+    "brand": "Califnco",
+    "description": "MineralFresh RO+UV Water Purifier. Califnco water purifiers product. Check the product details and compatibility before ordering.",
     "retailPrice": 16999,
     "dealerPrice": 12500,
     "stock": 30,
     "rating": 4.7,
     "reviewCount": 167,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/alkaline-purifier.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/mineralfresh-ro-uv-water-purifier.jpg"
     ],
-    "tags": ["RO", "UV", "Alkaline", "Premium"],
+    "tags": [
+      "water purifiers",
+      "RO",
+      "UV"
+    ],
     "specifications": {
-      "Purification": "RO+UV+UF+Alkaline",
-      "Storage": "12 Liters",
-      "pH Range": "7.5-9.5",
-      "Warranty": "2 Years"
+      "Category": "water purifiers",
+      "Product": "MineralFresh RO+UV Water Purifier",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
-    "isFeatured": true
+    "isFeatured": false
   },
   {
     "id": "p016",
-    "name": "WaterFresh Table Top RO Purifier 5L",
-    "category": "water-purifiers",
-    "brand": "WaterFresh",
-    "description": "Compact tabletop RO purifier for small families. Fits anywhere, easy to install.",
+    "name": "AquaPrime Stainless Steel Water Dispenser",
+    "category": "dispensers",
+    "brand": "Califnco",
+    "description": "AquaPrime Stainless Steel Water Dispenser. Califnco dispensers product. Check the product details and compatibility before ordering.",
     "retailPrice": 7499,
     "dealerPrice": 5400,
     "stock": 50,
     "rating": 4.2,
     "reviewCount": 89,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/tabletop-purifier.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/aquaprime-stainless-steel-water-dispenser.jpg"
     ],
-    "tags": ["Table Top", "Compact", "RO"],
+    "tags": [
+      "dispensers"
+    ],
     "specifications": {
-      "Purification": "RO+UV",
-      "Storage": "5 Liters",
-      "Warranty": "1 Year"
+      "Category": "dispensers",
+      "Product": "AquaPrime Stainless Steel Water Dispenser",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p017",
-    "name": "IndustrialPure 50 LPH Commercial RO Plant",
-    "category": "water-purifiers",
-    "brand": "IndustrialPure",
-    "description": "Industrial-grade commercial RO plant for restaurants, offices and small industries. 50 LPH output.",
+    "name": "HydroCool Bottom-Load Water Dispenser",
+    "category": "dispensers",
+    "brand": "Califnco",
+    "description": "HydroCool Bottom-Load Water Dispenser. Califnco dispensers product. Check the product details and compatibility before ordering.",
     "retailPrice": 45000,
     "dealerPrice": 33000,
     "stock": 8,
     "rating": 4.4,
     "reviewCount": 34,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/commercial-ro.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/hydrocool-bottom-load-water-dispenser.jpg"
     ],
-    "tags": ["Commercial", "50 LPH", "Industrial"],
+    "tags": [
+      "dispensers",
+      "RO"
+    ],
     "specifications": {
-      "Output": "50 LPH",
-      "Input TDS": "Up to 2000 ppm",
-      "Voltage": "230V AC",
-      "Warranty": "1 Year"
+      "Category": "dispensers",
+      "Product": "HydroCool Bottom-Load Water Dispenser",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p018",
-    "name": "SlimLine Under-Sink RO Water Filter System",
-    "category": "water-purifiers",
-    "brand": "SlimLine",
-    "description": "Space-saving under-sink RO system. Hidden installation, dedicated faucet for pure water.",
+    "name": "PureServe Hot and Cold Water Dispenser",
+    "category": "dispensers",
+    "brand": "Califnco",
+    "description": "PureServe Hot and Cold Water Dispenser. Califnco dispensers product. Check the product details and compatibility before ordering.",
     "retailPrice": 14999,
     "dealerPrice": 11000,
     "stock": 22,
     "rating": 4.5,
     "reviewCount": 112,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/under-sink-ro.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/pureserve-hot-cold-water-dispenser.jpg"
     ],
-    "tags": ["Under-Sink", "Space-Saving", "RO"],
+    "tags": [
+      "dispensers"
+    ],
     "specifications": {
-      "Purification": "RO+UV+UF",
-      "Type": "Under-Sink",
-      "Stages": "6",
-      "Warranty": "2 Years"
+      "Category": "dispensers",
+      "Product": "PureServe Hot and Cold Water Dispenser",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p019",
-    "name": "PortaFilter Portable Water Filter Straw",
-    "category": "filters",
-    "brand": "PortaFilter",
-    "description": "Survival water filter straw. Filters up to 1500 liters. Removes bacteria and protozoa.",
+    "name": "ChillFlow Tabletop Water Dispenser",
+    "category": "dispensers",
+    "brand": "Califnco",
+    "description": "ChillFlow Tabletop Water Dispenser. Califnco dispensers product. Check the product details and compatibility before ordering.",
     "retailPrice": 1299,
     "dealerPrice": 850,
     "stock": 200,
     "rating": 4.3,
     "reviewCount": 445,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/filter-straw.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/chillflow-tabletop-water-dispenser.jpg"
     ],
-    "tags": ["Portable", "Straw Filter", "Outdoor"],
+    "tags": [
+      "dispensers"
+    ],
     "specifications": {
-      "Capacity": "1500 Liters",
-      "Removes": "Bacteria, Protozoa",
-      "Weight": "56g"
+      "Category": "dispensers",
+      "Product": "ChillFlow Tabletop Water Dispenser",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p020",
-    "name": "CeramicStar Candle Filter Set 8-piece",
-    "category": "filters",
-    "brand": "CeramicStar",
-    "description": "Ceramic candle filters for pot-type gravity purifiers. Pack of 8, each with silver nanoparticles.",
+    "name": "CrystalTap Wall-Mount Water Dispenser",
+    "category": "dispensers",
+    "brand": "Califnco",
+    "description": "CrystalTap Wall-Mount Water Dispenser. Califnco dispensers product. Check the product details and compatibility before ordering.",
     "retailPrice": 799,
     "dealerPrice": 520,
     "stock": 150,
-    "rating": 4.0,
+    "rating": 4,
     "reviewCount": 203,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/ceramic-filter.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/crystaltap-wall-mount-water-dispenser.jpg"
     ],
-    "tags": ["Ceramic", "Candle Filter", "Silver"],
+    "tags": [
+      "dispensers"
+    ],
     "specifications": {
-      "Quantity": "8 Pieces",
-      "Type": "Ceramic with Silver",
-      "Life": "6-12 Months"
+      "Category": "dispensers",
+      "Product": "CrystalTap Wall-Mount Water Dispenser",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p021",
-    "name": "AquaDispense Floor Standing Hot Cold Normal Dispenser",
+    "name": "AquaStand Floor-Standing Water Dispenser",
     "category": "dispensers",
-    "brand": "AquaDispense",
-    "description": "Three-tap floor standing dispenser with hot, cold and normal water. Large 1.5L cold tank.",
+    "brand": "Califnco",
+    "description": "AquaStand Floor-Standing Water Dispenser. Califnco dispensers product. Check the product details and compatibility before ordering.",
     "retailPrice": 9499,
     "dealerPrice": 6900,
     "stock": 18,
     "rating": 4.3,
     "reviewCount": 55,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/floor-dispenser.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/aquastand-floor-standing-water-dispenser.jpg"
     ],
-    "tags": ["Floor Standing", "3 Taps", "Hot Cold Normal"],
+    "tags": [
+      "dispensers"
+    ],
     "specifications": {
-      "Type": "Floor Standing",
-      "Taps": "3 (Hot/Cold/Normal)",
-      "Cooling": "Compressor",
-      "Warranty": "1 Year"
+      "Category": "dispensers",
+      "Product": "AquaStand Floor-Standing Water Dispenser",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p022",
-    "name": "MiniCool Table Top Water Cooler Dispenser",
+    "name": "HydroTouch Touchless Water Dispenser",
     "category": "dispensers",
-    "brand": "MiniCool",
-    "description": "Compact tabletop water cooler with cooling and heating. Ideal for desks and small spaces.",
+    "brand": "Califnco",
+    "description": "HydroTouch Touchless Water Dispenser. Califnco dispensers product. Check the product details and compatibility before ordering.",
     "retailPrice": 5999,
     "dealerPrice": 4300,
     "stock": 32,
     "rating": 4.1,
     "reviewCount": 78,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/tabletop-cooler.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/hydrotouch-touchless-water-dispenser.jpg"
     ],
-    "tags": ["Table Top", "Mini", "Cooling"],
+    "tags": [
+      "dispensers",
+      "RO"
+    ],
     "specifications": {
-      "Type": "Table Top",
-      "Cooling": "Thermoelectric",
-      "Warranty": "1 Year"
+      "Category": "dispensers",
+      "Product": "HydroTouch Touchless Water Dispenser",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p023",
-    "name": "High Flow Booster Pump 24V DC for RO",
-    "category": "pumps",
-    "brand": "BoostPro",
-    "description": "24V DC booster pump for RO systems with low inlet pressure. Auto shut-off with pressure switch.",
+    "name": "PurePoint Bottleless Water Dispenser",
+    "category": "dispensers",
+    "brand": "Califnco",
+    "description": "PurePoint Bottleless Water Dispenser. Califnco dispensers product. Check the product details and compatibility before ordering.",
     "retailPrice": 1299,
     "dealerPrice": 850,
     "stock": 180,
     "rating": 4.2,
     "reviewCount": 167,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/booster-pump.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/purepoint-bottleless-water-dispenser.jpg"
     ],
-    "tags": ["Booster Pump", "24V DC", "RO"],
+    "tags": [
+      "dispensers"
+    ],
     "specifications": {
-      "Voltage": "24V DC",
-      "Flow Rate": "100 GPD max",
-      "Pressure Switch": "Included",
-      "Life": "3000+ Hours"
+      "Category": "dispensers",
+      "Product": "PurePoint Bottleless Water Dispenser",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p024",
-    "name": "Centrifugal Monoblock Pump 1HP Cast Iron",
-    "category": "pumps",
-    "brand": "IronFlow",
-    "description": "Heavy-duty cast iron monoblock pump for agriculture and industrial applications.",
+    "name": "FreshWave Commercial Water Dispenser",
+    "category": "dispensers",
+    "brand": "Califnco",
+    "description": "FreshWave Commercial Water Dispenser. Califnco dispensers product. Check the product details and compatibility before ordering.",
     "retailPrice": 5499,
     "dealerPrice": 4000,
     "stock": 28,
     "rating": 4.4,
     "reviewCount": 89,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/monoblock-ci.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/freshwave-commercial-water-dispenser.jpg"
     ],
-    "tags": ["Cast Iron", "1HP", "Agriculture"],
+    "tags": [
+      "dispensers"
+    ],
     "specifications": {
-      "Power": "1 HP",
-      "Material": "Cast Iron",
-      "Head": "35m max",
-      "Warranty": "1 Year"
+      "Category": "dispensers",
+      "Product": "FreshWave Commercial Water Dispenser",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p025",
-    "name": "Solenoid Valve 24V DC for RO Purifier",
-    "category": "spare-parts",
-    "brand": "ValveTec",
-    "description": "High-quality 24V DC solenoid valve for automatic water control in RO systems.",
+    "name": "AquaPump Automatic Bottle Water Dispenser",
+    "category": "dispensers",
+    "brand": "Califnco",
+    "description": "AquaPump Automatic Bottle Water Dispenser. Califnco dispensers product. Check the product details and compatibility before ordering.",
     "retailPrice": 299,
     "dealerPrice": 190,
     "stock": 300,
     "rating": 4.3,
     "reviewCount": 134,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/solenoid-valve.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/aquapump-automatic-bottle-water-dispenser.jpg"
     ],
-    "tags": ["Solenoid Valve", "24V DC", "Replacement"],
+    "tags": [
+      "dispensers"
+    ],
     "specifications": {
-      "Voltage": "24V DC",
-      "Type": "Normally Closed",
-      "Connection": "1/4 inch"
+      "Category": "dispensers",
+      "Product": "AquaPump Automatic Bottle Water Dispenser",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p026",
-    "name": "RO Storage Tank 12L Pressure Tank",
-    "category": "spare-parts",
-    "brand": "TankPure",
-    "description": "Food-grade 12L pressure storage tank for RO systems. Butyl rubber bladder for pure water storage.",
+    "name": "RO Booster Pump 100 GPD",
+    "category": "pumps",
+    "brand": "Califnco",
+    "description": "RO Booster Pump 100 GPD. Califnco pumps product. Check the product details and compatibility before ordering.",
     "retailPrice": 1199,
     "dealerPrice": 800,
     "stock": 100,
     "rating": 4.4,
     "reviewCount": 98,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/ro-tank.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/ro-booster-pump-100-gpd.jpg"
     ],
-    "tags": ["Storage Tank", "12L", "Pressure Tank"],
+    "tags": [
+      "pumps",
+      "RO",
+      "GPD"
+    ],
     "specifications": {
-      "Capacity": "12 Liters",
-      "Pressure": "0-100 psi",
-      "Material": "Food-grade Steel",
-      "Bladder": "Butyl Rubber"
+      "Category": "pumps",
+      "Product": "RO Booster Pump 100 GPD",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p027",
-    "name": "Auto Cut-off Float Valve Tank Fitting",
-    "category": "spare-parts",
-    "brand": "ValveTec",
-    "description": "Automatic float valve for overhead tanks. Stops water flow when tank is full.",
+    "name": "RO Booster Pump 150 GPD",
+    "category": "pumps",
+    "brand": "Califnco",
+    "description": "RO Booster Pump 150 GPD. Califnco pumps product. Check the product details and compatibility before ordering.",
     "retailPrice": 149,
     "dealerPrice": 90,
     "stock": 500,
-    "rating": 4.0,
+    "rating": 4,
     "reviewCount": 312,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/float-valve.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/ro-booster-pump-150-gpd.jpg"
     ],
-    "tags": ["Float Valve", "Auto Cut-off", "Tank"],
+    "tags": [
+      "pumps",
+      "RO",
+      "GPD"
+    ],
     "specifications": {
-      "Size": "1/2 inch",
-      "Material": "Brass + Plastic",
-      "Working Pressure": "1-5 bar"
+      "Category": "pumps",
+      "Product": "RO Booster Pump 150 GPD",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p028",
-    "name": "AquaNova Countertop RO Water Purifier",
-    "category": "water-purifiers",
-    "brand": "AquaNova",
-    "description": "Sleek countertop design with 5-stage RO filtration. No permanent installation required.",
+    "name": "RO Booster Pump 300 GPD",
+    "category": "pumps",
+    "brand": "Califnco",
+    "description": "RO Booster Pump 300 GPD. Califnco pumps product. Check the product details and compatibility before ordering.",
     "retailPrice": 10999,
     "dealerPrice": 8000,
     "stock": 38,
     "rating": 4.5,
     "reviewCount": 143,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/countertop-ro.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/ro-booster-pump-300-gpd.jpg"
     ],
-    "tags": ["Countertop", "No Installation", "RO"],
+    "tags": [
+      "pumps",
+      "RO",
+      "GPD"
+    ],
     "specifications": {
-      "Purification": "5-Stage RO",
-      "Storage": "Tankless",
-      "Capacity": "400 GPD",
-      "Warranty": "2 Years"
+      "Category": "pumps",
+      "Product": "RO Booster Pump 300 GPD",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
-    "isFeatured": true
+    "isFeatured": false
   },
   {
     "id": "p029",
-    "name": "WaterVita Whole House Water Filter System",
-    "category": "filters",
-    "brand": "WaterVita",
-    "description": "Whole house filtration system. 3-stage filtration for every tap in your home.",
+    "name": "Universal Water Purifier Pressure Pump",
+    "category": "pumps",
+    "brand": "Califnco",
+    "description": "Universal Water Purifier Pressure Pump. Califnco pumps product. Check the product details and compatibility before ordering.",
     "retailPrice": 8999,
     "dealerPrice": 6500,
     "stock": 15,
     "rating": 4.4,
     "reviewCount": 56,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/whole-house-filter.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/universal-water-purifier-pressure-pump.jpg"
     ],
-    "tags": ["Whole House", "3-Stage", "Multiple Taps"],
+    "tags": [
+      "pumps"
+    ],
     "specifications": {
-      "Stages": "3",
-      "Flow Rate": "15 LPM",
-      "Connection": "1 inch",
-      "Life": "12 Months"
+      "Category": "pumps",
+      "Product": "Universal Water Purifier Pressure Pump",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p030",
-    "name": "Post-Carbon Inline Filter Cartridge for RO",
-    "category": "filters",
-    "brand": "PureSediment",
-    "description": "Inline post-carbon filter for taste and odor improvement of RO purified water.",
+    "name": "Automatic Shut-Off Valve for RO Purifier",
+    "category": "spare-parts",
+    "brand": "Califnco",
+    "description": "Automatic Shut-Off Valve for RO Purifier. Califnco spare parts product. Check the product details and compatibility before ordering.",
     "retailPrice": 249,
     "dealerPrice": 155,
     "stock": 400,
     "rating": 4.2,
     "reviewCount": 267,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/inline-filter.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/automatic-shut-off-valve-ro-purifier.jpg"
     ],
-    "tags": ["Post-Carbon", "Inline", "Taste"],
+    "tags": [
+      "spare parts",
+      "RO"
+    ],
     "specifications": {
-      "Type": "Post-Carbon",
-      "Size": "Inline",
-      "Life": "6-12 Months"
+      "Category": "spare parts",
+      "Product": "Automatic Shut-Off Valve for RO Purifier",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p031",
-    "name": "Water Purifier Installation Kit Complete",
+    "name": "RO Inlet Solenoid Valve",
     "category": "spare-parts",
-    "brand": "InstallPro",
-    "description": "Complete installation kit with 3/8 tube, connectors, drain saddle, feed valve and faucet.",
+    "brand": "Califnco",
+    "description": "RO Inlet Solenoid Valve. Califnco spare parts product. Check the product details and compatibility before ordering.",
     "retailPrice": 699,
     "dealerPrice": 450,
     "stock": 150,
     "rating": 4.3,
     "reviewCount": 189,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/install-kit.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/ro-inlet-solenoid-valve.jpg"
     ],
-    "tags": ["Installation Kit", "Complete", "DIY"],
+    "tags": [
+      "spare parts",
+      "RO"
+    ],
     "specifications": {
-      "Includes": "Tubes, Connectors, Faucet, Drain Saddle",
-      "Tube Length": "3 meters each"
+      "Category": "spare parts",
+      "Product": "RO Inlet Solenoid Valve",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p032",
-    "name": "AquaSpring Spring Water Natural Purifier",
-    "category": "water-purifiers",
-    "brand": "AquaSpring",
-    "description": "Natural spring water purification system using multi-layer mineral stones and charcoal.",
+    "name": "Water Purifier Float Valve",
+    "category": "spare-parts",
+    "brand": "Califnco",
+    "description": "Water Purifier Float Valve. Califnco spare parts product. Check the product details and compatibility before ordering.",
     "retailPrice": 4999,
     "dealerPrice": 3600,
     "stock": 42,
     "rating": 4.1,
     "reviewCount": 78,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/spring-purifier.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/water-purifier-float-valve.jpg"
     ],
-    "tags": ["Natural", "Mineral Stones", "No-Electric"],
+    "tags": [
+      "spare parts"
+    ],
     "specifications": {
-      "Type": "Natural filtration",
-      "Stages": "Multi-layer",
-      "Power": "None"
+      "Category": "spare parts",
+      "Product": "Water Purifier Float Valve",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p033",
-    "name": "AquaMineral Remineralizer Filter Cartridge",
+    "name": "RO Membrane 75 GPD",
     "category": "filters",
-    "brand": "AquaMineral",
-    "description": "Adds healthy minerals (Ca, Mg, K) back to RO purified water. Inline post-filter design.",
+    "brand": "Califnco",
+    "description": "RO Membrane 75 GPD. Califnco filters product. Check the product details and compatibility before ordering.",
     "retailPrice": 899,
     "dealerPrice": 600,
     "stock": 120,
     "rating": 4.5,
     "reviewCount": 234,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/remineralizer.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/ro-membrane-75-gpd.jpg"
     ],
-    "tags": ["Remineralizer", "Minerals", "Post-Filter"],
+    "tags": [
+      "filters",
+      "RO",
+      "GPD"
+    ],
     "specifications": {
-      "Minerals Added": "Ca, Mg, K, Na",
-      "Size": "Inline 10 inch",
-      "Life": "6-12 Months"
+      "Category": "filters",
+      "Product": "RO Membrane 75 GPD",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p034",
-    "name": "Pump Pressure Switch 40-60 PSI Auto Control",
-    "category": "spare-parts",
-    "brand": "SwitchPro",
-    "description": "Automatic pressure switch for water pump control. Turns pump on/off based on water pressure.",
+    "name": "RO Membrane 100 GPD",
+    "category": "filters",
+    "brand": "Califnco",
+    "description": "RO Membrane 100 GPD. Califnco filters product. Check the product details and compatibility before ordering.",
     "retailPrice": 549,
     "dealerPrice": 360,
     "stock": 200,
     "rating": 4.2,
     "reviewCount": 112,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/pressure-switch.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/ro-membrane-100-gpd.jpg"
     ],
-    "tags": ["Pressure Switch", "Auto Control", "Pump"],
+    "tags": [
+      "filters",
+      "RO",
+      "GPD"
+    ],
     "specifications": {
-      "Cut-in Pressure": "40 PSI",
-      "Cut-out Pressure": "60 PSI",
-      "Voltage": "220V AC"
+      "Category": "filters",
+      "Product": "RO Membrane 100 GPD",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p035",
-    "name": "Digital Water Flow Meter Sensor",
-    "category": "spare-parts",
-    "brand": "FlowSense",
-    "description": "Hall effect water flow sensor for measuring and monitoring water consumption.",
+    "name": "Commercial RO Membrane 300 GPD",
+    "category": "filters",
+    "brand": "Califnco",
+    "description": "Commercial RO Membrane 300 GPD. Califnco filters product. Check the product details and compatibility before ordering.",
     "retailPrice": 449,
     "dealerPrice": 290,
     "stock": 180,
     "rating": 4.1,
     "reviewCount": 67,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/flow-sensor.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/commercial-ro-membrane-300-gpd.jpg"
     ],
-    "tags": ["Flow Meter", "Digital", "Monitoring"],
+    "tags": [
+      "filters",
+      "RO",
+      "GPD"
+    ],
     "specifications": {
-      "Range": "1-30 LPM",
-      "Working Voltage": "5-24V DC",
-      "Connection": "1/2 inch"
+      "Category": "filters",
+      "Product": "Commercial RO Membrane 300 GPD",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p036",
-    "name": "RO Faucet Tap Chrome Finish",
-    "category": "spare-parts",
-    "brand": "FaucetPro",
-    "description": "Lead-free chrome faucet for RO purified water. 360-degree rotation, easy to install.",
+    "name": "UF Membrane Filter 0.01 Micron",
+    "category": "filters",
+    "brand": "Califnco",
+    "description": "UF Membrane Filter 0.01 Micron. Califnco filters product. Check the product details and compatibility before ordering.",
     "retailPrice": 399,
     "dealerPrice": 250,
     "stock": 250,
     "rating": 4.3,
     "reviewCount": 178,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/ro-faucet.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/uf-membrane-filter-001-micron.jpg"
     ],
-    "tags": ["Faucet", "Chrome", "Lead-free"],
+    "tags": [
+      "filters",
+      "RO",
+      "UF"
+    ],
     "specifications": {
-      "Material": "Lead-free Brass",
-      "Finish": "Chrome",
-      "Rotation": "360 degrees"
+      "Category": "filters",
+      "Product": "UF Membrane Filter 0.01 Micron",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p037",
-    "name": "Water Softener Resin Salt-based 25kg",
-    "category": "filters",
-    "brand": "SoftWater",
-    "description": "Ion exchange resin for water softeners. Removes calcium and magnesium ions causing hard water.",
+    "name": "UV Lamp 11W for Water Purifier",
+    "category": "spare-parts",
+    "brand": "Califnco",
+    "description": "UV Lamp 11W for Water Purifier. Califnco spare parts product. Check the product details and compatibility before ordering.",
     "retailPrice": 3499,
     "dealerPrice": 2500,
     "stock": 60,
     "rating": 4.2,
     "reviewCount": 45,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/softener-resin.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/uv-lamp-11w-water-purifier.jpg"
     ],
-    "tags": ["Water Softener", "Resin", "Hard Water"],
+    "tags": [
+      "spare parts",
+      "UV"
+    ],
     "specifications": {
-      "Quantity": "25 kg",
-      "Type": "Cation Exchange",
-      "Capacity": "50,000 grains"
+      "Category": "spare parts",
+      "Product": "UV Lamp 11W for Water Purifier",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p038",
-    "name": "AquaJunior Kids Water Purifier 4L",
-    "category": "water-purifiers",
-    "brand": "AquaJunior",
-    "description": "Colorful child-friendly water purifier. Safe plastics, UF + carbon filtration, 4L storage.",
+    "name": "UV Chamber Assembly 11W",
+    "category": "spare-parts",
+    "brand": "Califnco",
+    "description": "UV Chamber Assembly 11W. Califnco spare parts product. Check the product details and compatibility before ordering.",
     "retailPrice": 4499,
     "dealerPrice": 3200,
     "stock": 45,
     "rating": 4.4,
     "reviewCount": 89,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/kids-purifier.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/uv-chamber-assembly-11w.jpg"
     ],
-    "tags": ["Kids", "Colorful", "Safe", "UF"],
+    "tags": [
+      "spare parts",
+      "UV"
+    ],
     "specifications": {
-      "Purification": "UF + Carbon",
-      "Storage": "4 Liters",
-      "BPA Free": "Yes"
+      "Category": "spare parts",
+      "Product": "UV Chamber Assembly 11W",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p039",
-    "name": "High Pressure RO Pump 75 GPD Diaphragm",
-    "category": "pumps",
-    "brand": "BoostPro",
-    "description": "75 GPD diaphragm pump for high-pressure RO systems. Self-priming, quiet operation.",
+    "name": "Sediment Filter Cartridge 10-Inch",
+    "category": "filters",
+    "brand": "Califnco",
+    "description": "Sediment Filter Cartridge 10-Inch. Califnco filters product. Check the product details and compatibility before ordering.",
     "retailPrice": 2499,
     "dealerPrice": 1800,
     "stock": 70,
     "rating": 4.3,
     "reviewCount": 134,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/diaphragm-pump.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/sediment-filter-cartridge-10-inch.jpg"
     ],
-    "tags": ["Diaphragm Pump", "75 GPD", "High Pressure"],
+    "tags": [
+      "filters"
+    ],
     "specifications": {
-      "Capacity": "75 GPD",
-      "Voltage": "24V DC",
-      "Noise Level": "<45 dB"
+      "Category": "filters",
+      "Product": "Sediment Filter Cartridge 10-Inch",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p040",
-    "name": "Solar Water Pump 24V DC 1000 LPH",
-    "category": "pumps",
-    "brand": "SolarFlow",
-    "description": "DC solar pump for rural water supply. Operates directly from solar panels, no batteries needed.",
+    "name": "Spun PP Sediment Filter 5 Micron",
+    "category": "filters",
+    "brand": "Califnco",
+    "description": "Spun PP Sediment Filter 5 Micron. Califnco filters product. Check the product details and compatibility before ordering.",
     "retailPrice": 8999,
     "dealerPrice": 6500,
     "stock": 20,
     "rating": 4.5,
     "reviewCount": 67,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/solar-pump.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/spun-pp-sediment-filter-5-micron.jpg"
     ],
-    "tags": ["Solar", "DC Pump", "Rural", "Eco-Friendly"],
+    "tags": [
+      "filters",
+      "RO"
+    ],
     "specifications": {
-      "Voltage": "24V DC",
-      "Flow Rate": "1000 LPH",
-      "Head": "20m max",
-      "Solar Panel": "100W+ recommended"
+      "Category": "filters",
+      "Product": "Spun PP Sediment Filter 5 Micron",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
-    "isFeatured": true
+    "isFeatured": false
   },
   {
     "id": "p041",
-    "name": "Pipe Fittings 1/4 inch Push-fit Connector Set 10 pcs",
-    "category": "spare-parts",
-    "brand": "FitPro",
-    "description": "Quick-connect push-fit fittings for RO tubing. Includes elbows, tees, and straight connectors.",
+    "name": "Activated Carbon Block Filter Cartridge",
+    "category": "filters",
+    "brand": "Califnco",
+    "description": "Activated Carbon Block Filter Cartridge. Califnco filters product. Check the product details and compatibility before ordering.",
     "retailPrice": 199,
     "dealerPrice": 120,
     "stock": 600,
     "rating": 4.1,
     "reviewCount": 389,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/pipe-fittings.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/activated-carbon-block-filter-cartridge.jpg"
     ],
-    "tags": ["Push-fit", "1/4 inch", "Fittings"],
+    "tags": [
+      "filters"
+    ],
     "specifications": {
-      "Quantity": "10 pieces",
-      "Size": "1/4 inch",
-      "Includes": "Elbows, Tees, Straights"
+      "Category": "filters",
+      "Product": "Activated Carbon Block Filter Cartridge",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p042",
-    "name": "Wall Mount Water Purifier Bracket Set",
-    "category": "spare-parts",
-    "brand": "MountPro",
-    "description": "Universal wall mounting bracket for water purifiers. Heavy-duty steel, adjustable width.",
+    "name": "Granular Activated Carbon Filter Cartridge",
+    "category": "filters",
+    "brand": "Califnco",
+    "description": "Granular Activated Carbon Filter Cartridge. Califnco filters product. Check the product details and compatibility before ordering.",
     "retailPrice": 349,
     "dealerPrice": 220,
     "stock": 200,
     "rating": 4.2,
     "reviewCount": 145,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/wall-bracket.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/granular-activated-carbon-filter-cartridge.jpg"
     ],
-    "tags": ["Wall Mount", "Bracket", "Universal"],
+    "tags": [
+      "filters"
+    ],
     "specifications": {
-      "Material": "Heavy-duty Steel",
-      "Max Load": "15 kg",
-      "Adjustable": "Yes"
+      "Category": "filters",
+      "Product": "Granular Activated Carbon Filter Cartridge",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p043",
-    "name": "AquaPure Zero Waste Permeate Pump",
-    "category": "pumps",
-    "brand": "EcoPump",
-    "description": "Permeate pump reduces water waste by 80% in RO systems. No electricity needed, uses water pressure.",
+    "name": "Post Carbon Inline Filter",
+    "category": "filters",
+    "brand": "Califnco",
+    "description": "Post Carbon Inline Filter. Califnco filters product. Check the product details and compatibility before ordering.",
     "retailPrice": 1899,
     "dealerPrice": 1300,
     "stock": 90,
     "rating": 4.6,
     "reviewCount": 112,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/permeate-pump.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/post-carbon-inline-filter.jpg"
     ],
-    "tags": ["Zero Waste", "Permeate Pump", "Eco"],
+    "tags": [
+      "filters"
+    ],
     "specifications": {
-      "Waste Reduction": "Up to 80%",
-      "Power": "None",
-      "Connection": "1/4 inch"
+      "Category": "filters",
+      "Product": "Post Carbon Inline Filter",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
-    "isFeatured": true
+    "isFeatured": false
   },
   {
     "id": "p044",
-    "name": "Water Quality pH Meter Digital Tester",
-    "category": "spare-parts",
-    "brand": "TDSCheck",
-    "description": "Precision digital pH meter for water testing. Measures pH 0-14 with ±0.1 accuracy.",
+    "name": "Pre-Carbon Inline Filter",
+    "category": "filters",
+    "brand": "Califnco",
+    "description": "Pre-Carbon Inline Filter. Califnco filters product. Check the product details and compatibility before ordering.",
     "retailPrice": 799,
     "dealerPrice": 550,
     "stock": 120,
     "rating": 4.4,
     "reviewCount": 234,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/ph-meter.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/pre-carbon-inline-filter.jpg"
     ],
-    "tags": ["pH Meter", "Digital", "Water Testing"],
+    "tags": [
+      "filters"
+    ],
     "specifications": {
-      "Range": "0-14 pH",
-      "Accuracy": "±0.1 pH",
-      "Calibration": "2-point auto"
+      "Category": "filters",
+      "Product": "Pre-Carbon Inline Filter",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p045",
-    "name": "SpeedPure 100 LPH Commercial RO System",
-    "category": "water-purifiers",
-    "brand": "SpeedPure",
-    "description": "100 LPH commercial RO system for hotels, hospitals and large offices.",
+    "name": "Mineralizer Inline Filter Cartridge",
+    "category": "filters",
+    "brand": "Califnco",
+    "description": "Mineralizer Inline Filter Cartridge. Califnco filters product. Check the product details and compatibility before ordering.",
     "retailPrice": 75000,
     "dealerPrice": 55000,
     "stock": 5,
     "rating": 4.5,
     "reviewCount": 23,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/commercial-ro-100.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/mineralizer-inline-filter-cartridge.jpg"
     ],
-    "tags": ["Commercial", "100 LPH", "Hospital Grade"],
+    "tags": [
+      "filters"
+    ],
     "specifications": {
-      "Output": "100 LPH",
-      "Pre-Treatment": "Multimedia + Softener",
-      "Voltage": "415V 3-Phase",
-      "Warranty": "2 Years"
+      "Category": "filters",
+      "Product": "Mineralizer Inline Filter Cartridge",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p046",
-    "name": "AquaWall Mounted Water Dispenser Hot Cold",
-    "category": "dispensers",
-    "brand": "AquaWall",
-    "description": "Wall mounted tankless water dispenser. Connects directly to water line, no bottle needed.",
+    "name": "Alkaline Water Filter Cartridge",
+    "category": "filters",
+    "brand": "Califnco",
+    "description": "Alkaline Water Filter Cartridge. Califnco filters product. Check the product details and compatibility before ordering.",
     "retailPrice": 13999,
     "dealerPrice": 10000,
     "stock": 12,
     "rating": 4.4,
     "reviewCount": 45,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/wall-dispenser.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/alkaline-water-filter-cartridge.jpg"
     ],
-    "tags": ["Wall Mounted", "Tankless", "Direct-Line"],
+    "tags": [
+      "filters"
+    ],
     "specifications": {
-      "Type": "Wall Mounted",
-      "Connection": "Direct line",
-      "Hot": "Yes",
-      "Cold": "Yes"
+      "Category": "filters",
+      "Product": "Alkaline Water Filter Cartridge",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p047",
-    "name": "Pre-Filter Housing 10 inch Single Stage",
+    "name": "Copper Infusion Filter Cartridge",
     "category": "filters",
-    "brand": "HousePure",
-    "description": "Standard 10-inch filter housing for pre-filtration. Pressure release button, clear bowl.",
+    "brand": "Califnco",
+    "description": "Copper Infusion Filter Cartridge. Califnco filters product. Check the product details and compatibility before ordering.",
     "retailPrice": 449,
     "dealerPrice": 290,
     "stock": 200,
     "rating": 4.1,
     "reviewCount": 198,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/filter-housing.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/copper-infusion-filter-cartridge.jpg"
     ],
-    "tags": ["Filter Housing", "10 inch", "Single Stage"],
+    "tags": [
+      "filters"
+    ],
     "specifications": {
-      "Size": "10 inch",
-      "Max Pressure": "100 PSI",
-      "Bowl": "Transparent"
+      "Category": "filters",
+      "Product": "Copper Infusion Filter Cartridge",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p048",
-    "name": "Electronic Water Level Controller Sensor",
+    "name": "TDS Controller for RO Purifier",
     "category": "spare-parts",
-    "brand": "LevelPro",
-    "description": "Automatic water level controller with overflow protection and dry-run pump protection.",
+    "brand": "Califnco",
+    "description": "TDS Controller for RO Purifier. Califnco spare parts product. Check the product details and compatibility before ordering.",
     "retailPrice": 899,
     "dealerPrice": 620,
     "stock": 150,
     "rating": 4.3,
     "reviewCount": 167,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/water-level-controller.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/tds-controller-ro-purifier.jpg"
     ],
-    "tags": ["Level Controller", "Auto", "Overflow Protection"],
+    "tags": [
+      "spare parts",
+      "RO"
+    ],
     "specifications": {
-      "Voltage": "220V AC",
-      "Pump Capacity": "Up to 2 HP",
-      "Sensors": "3 probe"
+      "Category": "spare parts",
+      "Product": "TDS Controller for RO Purifier",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p049",
-    "name": "Reverse Osmosis Filter Housing 3-Stage Set",
-    "category": "filters",
-    "brand": "HousePure",
-    "description": "Complete 3-stage filter housing set for standard RO systems. Includes wrenches.",
+    "name": "Water Purifier SMPS Power Supply 24V",
+    "category": "spare-parts",
+    "brand": "Califnco",
+    "description": "Water Purifier SMPS Power Supply 24V. Califnco spare parts product. Check the product details and compatibility before ordering.",
     "retailPrice": 1299,
     "dealerPrice": 900,
     "stock": 100,
     "rating": 4.2,
     "reviewCount": 134,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/3stage-housing.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/water-purifier-smps-power-supply-24v.jpg"
     ],
-    "tags": ["3-Stage", "Housing Set", "RO"],
+    "tags": [
+      "spare parts"
+    ],
     "specifications": {
-      "Stages": "3",
-      "Size": "10 inch each",
-      "Includes": "Housings + Wrenches"
+      "Category": "spare parts",
+      "Product": "Water Purifier SMPS Power Supply 24V",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p050",
-    "name": "AquaGold Premium 9-Stage Water Purifier 15L",
-    "category": "water-purifiers",
-    "brand": "AquaGold",
-    "description": "Top-of-the-line 9-stage purifier with gold-finish panel. RO+UV+UF+Alkaline+TDS+Copper.",
+    "name": "RO Flow Restrictor 300 ml",
+    "category": "spare-parts",
+    "brand": "Califnco",
+    "description": "RO Flow Restrictor 300 ml. Califnco spare parts product. Check the product details and compatibility before ordering.",
     "retailPrice": 24999,
     "dealerPrice": 18500,
     "stock": 15,
     "rating": 4.8,
     "reviewCount": 89,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/gold-purifier.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/ro-flow-restrictor-300ml.jpg"
     ],
-    "tags": ["Premium", "9-Stage", "Copper", "Alkaline"],
+    "tags": [
+      "spare parts",
+      "RO"
+    ],
     "specifications": {
-      "Purification": "RO+UV+UF+Alkaline+Copper",
-      "Storage": "15 Liters",
-      "Stages": "9",
-      "Warranty": "3 Years"
+      "Category": "spare parts",
+      "Product": "RO Flow Restrictor 300 ml",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
-    "isFeatured": true
+    "isFeatured": false
   },
   {
     "id": "p051",
-    "name": "Shower Water Filter Softener",
-    "category": "filters",
-    "brand": "ShowerPure",
-    "description": "Shower head filter that removes chlorine, heavy metals and softens hard water for healthy hair.",
+    "name": "RO Tubing Pipe 1/4-Inch",
+    "category": "spare-parts",
+    "brand": "Califnco",
+    "description": "RO Tubing Pipe 1/4-Inch. Califnco spare parts product. Check the product details and compatibility before ordering.",
     "retailPrice": 1999,
     "dealerPrice": 1400,
     "stock": 100,
     "rating": 4.3,
     "reviewCount": 345,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/shower-filter.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/ro-tubing-pipe-quarter-inch.jpg"
     ],
-    "tags": ["Shower", "Hair Care", "Chlorine Removal"],
+    "tags": [
+      "spare parts",
+      "RO"
+    ],
     "specifications": {
-      "Life": "6 Months / 10,000L",
-      "Removes": "Chlorine, Heavy metals",
-      "Fit": "Universal"
+      "Category": "spare parts",
+      "Product": "RO Tubing Pipe 1/4-Inch",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false
   },
   {
     "id": "p052",
-    "name": "AquaSmart WiFi Smart Water Purifier Controller",
+    "name": "Water Purifier Faucet with Chrome Finish",
     "category": "spare-parts",
-    "brand": "SmartPure",
-    "description": "IoT controller for water purifiers. Monitor filter life, water quality and control via smartphone.",
+    "brand": "Califnco",
+    "description": "Water Purifier Faucet with Chrome Finish. Califnco spare parts product. Check the product details and compatibility before ordering.",
     "retailPrice": 2999,
     "dealerPrice": 2100,
     "stock": 40,
     "rating": 4.4,
     "reviewCount": 67,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/smart-controller.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/water-purifier-chrome-faucet.jpg"
     ],
-    "tags": ["Smart", "WiFi", "IoT", "App Control"],
+    "tags": [
+      "spare parts",
+      "RO"
+    ],
     "specifications": {
-      "Connectivity": "WiFi 2.4GHz",
-      "App": "Android + iOS",
-      "Monitors": "TDS, Filter Life, Flow"
+      "Category": "spare parts",
+      "Product": "Water Purifier Faucet with Chrome Finish",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
-    "isFeatured": true
+    "isFeatured": false
   },
   {
     "id": "p053",
-    "name": "Magnetic Water Conditioner Anti-scale",
-    "category": "filters",
-    "brand": "MagnaFlow",
-    "description": "Magnetic water conditioner prevents scale build-up in pipes and appliances without chemicals.",
+    "name": "Universal Water Purifier Installation Kit",
+    "category": "spare-parts",
+    "brand": "Califnco",
+    "description": "Universal Water Purifier Installation Kit. Califnco spare parts product. Check the product details and compatibility before ordering.",
     "retailPrice": 1499,
     "dealerPrice": 1000,
     "stock": 80,
-    "rating": 4.0,
+    "rating": 4,
     "reviewCount": 123,
     "images": [
-      "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_fill/magnetic-conditioner.jpg"
+      "https://res.cloudinary.com/ncr7nc7f/image/upload/universal-water-purifier-installation-kit.jpg"
     ],
-    "tags": ["Magnetic", "Anti-Scale", "No Chemicals"],
+    "tags": [
+      "spare parts"
+    ],
     "specifications": {
-      "Pipe Size": "1/2 to 1 inch",
-      "Installation": "Clamp-on",
-      "Power": "None"
+      "Category": "spare parts",
+      "Product": "Universal Water Purifier Installation Kit",
+      "Compatibility": "Check model compatibility before purchase"
     },
     "isActive": true,
     "isFeatured": false

@@ -1,7 +1,8 @@
+import { useAppTheme } from '../../context/ThemeContext';
 import React, { useState, useCallback } from 'react';
 import {
   View, Text, TextInput, StyleSheet, FlatList,
-  TouchableOpacity, ActivityIndicator,
+  TouchableOpacity, ActivityIndicator, useWindowDimensions,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { productService } from '../../services/productService';
@@ -15,7 +16,14 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 const POPULAR_SEARCHES = ['RO Purifier', 'UV Purifier', 'Filter Cartridge', 'Water Dispenser', 'Booster Pump', 'TDS Meter'];
 
 export default function SearchScreen() {
+  const styles = createStyles();
+  const { isDark } = useAppTheme();
+  void isDark;
+
+
   const navigation = useNavigation<any>();
+  const { width: screenWidth } = useWindowDimensions();
+  const productCardWidth = screenWidth - SPACING.base * 2;
   const insets = useSafeAreaInsets();
   const { isDealer, isDealerApproved } = useAppStore();
   const isApprovedDealer = isDealer && isDealerApproved;
@@ -89,15 +97,13 @@ export default function SearchScreen() {
         <FlatList
           data={results}
           keyExtractor={(item) => item.id}
-          numColumns={2}
-          columnWrapperStyle={styles.columnWrapper}
           contentContainerStyle={styles.listContent}
           renderItem={({ item }) => (
             <ProductCard
               product={item}
               isDealer={isApprovedDealer}
               onPress={() => navigation.navigate('HomeTab', { screen: 'ProductDetail', params: { productId: item.id } })}
-              style={{ width: '100%' }}
+              style={{ width: productCardWidth, marginBottom: SPACING.md }}
             />
           )}
         />
@@ -106,20 +112,23 @@ export default function SearchScreen() {
   );
 }
 
-const styles = StyleSheet.create({
+function createStyles() {
+  const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: COLORS.background },
-  searchBarContainer: { backgroundColor: COLORS.primaryDark, paddingHorizontal: SPACING.base, paddingBottom: SPACING.base, paddingTop: SPACING.sm },
-  searchBar: { flexDirection: 'row', alignItems: 'center', gap: 10, backgroundColor: COLORS.surfaceAlt, borderWidth: 1, borderColor: COLORS.border, borderRadius: BORDER_RADIUS.full, paddingHorizontal: SPACING.base, height: 44 },
+  searchBarContainer: { backgroundColor: COLORS.background, paddingHorizontal: SPACING.base, paddingBottom: SPACING.base, paddingTop: SPACING.md },
+  searchBar: { flexDirection: 'row', alignItems: 'center', gap: 10, backgroundColor: COLORS.surface, borderWidth: 0, borderRadius: BORDER_RADIUS.full, paddingHorizontal: SPACING.base, height: 52, ...SHADOW.sm },
   searchInput: { flex: 1, fontSize: FONT_SIZE.base, color: COLORS.text },
   suggestionsSection: { padding: SPACING.base },
   sectionTitle: { fontFamily: FONTS.heading, fontSize: FONT_SIZE.base, fontWeight: FONT_WEIGHT.bold, color: COLORS.text, marginBottom: SPACING.md },
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: SPACING.sm },
-  chip: { flexDirection: 'row', alignItems: 'center', gap: 4, backgroundColor: COLORS.surface, borderRadius: BORDER_RADIUS.full, paddingHorizontal: 12, paddingVertical: 8, ...SHADOW.sm },
+  chip: { flexDirection: 'row', alignItems: 'center', gap: 6, backgroundColor: COLORS.surface, borderRadius: BORDER_RADIUS.full, paddingHorizontal: 14, paddingVertical: 10, ...SHADOW.sm },
   chipText: { fontSize: FONT_SIZE.sm, color: COLORS.textSecondary },
   loading: { flex: 1, justifyContent: 'center', alignItems: 'center' },
   noResults: { flex: 1, justifyContent: 'center', alignItems: 'center', gap: SPACING.sm },
   noResultsText: { fontSize: FONT_SIZE.base, fontWeight: FONT_WEIGHT.semiBold, color: COLORS.text },
   noResultsSub: { fontSize: FONT_SIZE.sm, color: COLORS.textMuted },
-  columnWrapper: { gap: SPACING.sm, paddingHorizontal: SPACING.base },
-  listContent: { padding: SPACING.sm, paddingTop: SPACING.base },
-});
+  listContent: { paddingHorizontal: SPACING.base, paddingTop: SPACING.base, paddingBottom: SPACING.xl },
+
+  });
+  return styles;
+}

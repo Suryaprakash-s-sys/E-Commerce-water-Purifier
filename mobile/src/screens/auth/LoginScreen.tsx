@@ -1,3 +1,4 @@
+import { useAppTheme } from '../../context/ThemeContext';
 import React, { useState } from 'react';
 import {
   View, Text, TextInput, TouchableOpacity, StyleSheet,
@@ -15,7 +16,12 @@ type Props = {
   navigation: NativeStackNavigationProp<AuthStackParamList, 'Login'>;
 };
 
-export default function LoginScreen({ navigation }: Props) {
+export default function LoginScreen({
+ navigation }: Props) {
+  const styles = createStyles();
+  const { isDark } = useAppTheme();
+  void isDark;
+
   const { signIn } = useAppStore();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -144,7 +150,8 @@ export default function LoginScreen({ navigation }: Props) {
   );
 }
 
-const styles = StyleSheet.create({
+function createStyles() {
+  const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: COLORS.primaryDark },
   scroll: { flexGrow: 1 },
   header: { alignItems: 'center', paddingTop: 60, paddingBottom: 32 },
@@ -203,4 +210,7 @@ const styles = StyleSheet.create({
   },
   dealerBtnText: { color: COLORS.primary, fontSize: FONT_SIZE.sm, fontWeight: FONT_WEIGHT.medium },
   footer: { textAlign: 'center', color: 'rgba(255,255,255,0.6)', fontSize: FONT_SIZE.xs, padding: SPACING.xl },
-});
+
+  });
+  return styles;
+}

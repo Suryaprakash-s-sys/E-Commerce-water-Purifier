@@ -1,3 +1,4 @@
+import { useAppTheme } from '../../context/ThemeContext';
 import React, { useEffect, useRef } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Animated } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
@@ -13,7 +14,12 @@ type Props = {
   route: RouteProp<HomeStackParamList, 'OrderSuccess'>;
 };
 
-export default function OrderSuccessScreen({ navigation, route }: Props) {
+export default function OrderSuccessScreen({
+ navigation, route }: Props) {
+  const styles = createStyles();
+  const { isDark } = useAppTheme();
+  void isDark;
+
   const { orderId } = route.params;
   const scaleAnim = useRef(new Animated.Value(0)).current;
   const opacityAnim = useRef(new Animated.Value(0)).current;
@@ -68,7 +74,8 @@ export default function OrderSuccessScreen({ navigation, route }: Props) {
   );
 }
 
-const styles = StyleSheet.create({
+function createStyles() {
+  const styles = StyleSheet.create({
   container: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: SPACING.xl },
   checkCircle: { width: 100, height: 100, borderRadius: 50, backgroundColor: 'rgba(255,255,255,0.3)', alignItems: 'center', justifyContent: 'center', marginBottom: SPACING.xl, borderWidth: 3, borderColor: 'rgba(255,255,255,0.5)' },
   content: { alignItems: 'center', width: '100%' },
@@ -85,4 +92,7 @@ const styles = StyleSheet.create({
   trackBtnText: { color: COLORS.success, fontWeight: FONT_WEIGHT.bold, fontSize: FONT_SIZE.base },
   homeBtn: { paddingVertical: 12, width: '100%', alignItems: 'center' },
   homeBtnText: { color: 'rgba(255,255,255,0.85)', fontSize: FONT_SIZE.base, fontWeight: FONT_WEIGHT.semiBold },
-});
+
+  });
+  return styles;
+}

@@ -1,3 +1,4 @@
+import { useAppTheme } from '../../context/ThemeContext';
 import React, { useState } from 'react';
 import {
   View, Text, TextInput, TouchableOpacity, StyleSheet,
@@ -9,12 +10,18 @@ import { authService } from '../../services/authService';
 import { COLORS, FONTS, FONT_SIZE, FONT_WEIGHT, SPACING, BORDER_RADIUS, SHADOW } from '../../utils/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { Address } from '../../types';
+import { captureCurrentAddressLocation } from '../../services/locationService';
 
 type Props = {
   navigation: NativeStackNavigationProp<AuthStackParamList, 'DealerRegister'>;
 };
 
-export default function DealerRegisterScreen({ navigation }: Props) {
+export default function DealerRegisterScreen({
+ navigation }: Props) {
+  const styles = createStyles();
+  const { isDark } = useAppTheme();
+  void isDark;
+
   const [form, setForm] = useState({
     name: '', email: '', phone: '', password: '', confirmPassword: '',
     businessName: '', gstNumber: '',
@@ -23,6 +30,8 @@ export default function DealerRegisterScreen({ navigation }: Props) {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState<Partial<typeof form>>({});
+  const [businessLocation, setBusinessLocation] = useState<{ lat: number; lng: number } | null>(null);
+  const [isLocating, setIsLocating] = useState(false);
 
   const update = (key: keyof typeof form) => (val: string) => {
     setForm((f) => ({ ...f, [key]: val }));
@@ -46,6 +55,26 @@ export default function DealerRegisterScreen({ navigation }: Props) {
     return Object.keys(e).length === 0;
   };
 
+  const useCurrentLocation = async () => {
+    setIsLocating(true);
+    try {
+      const location = await captureCurrentAddressLocation();
+      setBusinessLocation({ lat: location.lat, lng: location.lng });
+      setForm(current => ({
+        ...current,
+        addressLine1: current.addressLine1 || [location.streetNumber, location.street].filter(Boolean).join(' '),
+        city: location.city || location.district || current.city,
+        state: location.region || current.state,
+        pincode: location.postalCode || current.pincode,
+      }));
+      Alert.alert('Location added', 'Review the detected business address details before submitting.');
+    } catch (err) {
+      Alert.alert('Could not get location', err instanceof Error ? err.message : 'Please enter the business address manually.');
+    } finally {
+      setIsLocating(false);
+    }
+  };
+
   const handleRegister = async () => {
     if (!validate()) return;
     setIsLoading(true);
@@ -61,6 +90,8 @@ export default function DealerRegisterScreen({ navigation }: Props) {
         state: form.state,
         pincode: form.pincode,
         country: 'India',
+        lat: businessLocation?.lat,
+        lng: businessLocation?.lng,
         isDefault: true,
       };
       await authService.registerDealer(
@@ -135,6 +166,11 @@ export default function DealerRegisterScreen({ navigation }: Props) {
           ))}
 
           <Text style={[styles.sectionTitle, { marginTop: SPACING.lg }]}>Business Information</Text>
+          <TouchableOpacity style={styles.locationButton} onPress={() => void useCurrentLocation()} disabled={isLocating}>
+            {isLocating ? <ActivityIndicator color={COLORS.primary} /> : <Ionicons name="locate-outline" size={19} color={COLORS.primary} />}
+            <Text style={styles.locationButtonText}>{isLocating ? 'Getting location…' : 'Use current business location'}</Text>
+          </TouchableOpacity>
+          {businessLocation && <Text style={styles.locationHint}>Pin saved: {businessLocation.lat.toFixed(5)}, {businessLocation.lng.toFixed(5)}</Text>}
 
           {[
             { label: 'Business Name', key: 'businessName', icon: 'business-outline', placeholder: 'ABC Water Solutions Pvt Ltd' },
@@ -186,7 +222,8 @@ export default function DealerRegisterScreen({ navigation }: Props) {
   );
 }
 
-const styles = StyleSheet.create({
+function createStyles() {
+  const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: COLORS.primaryDark },
   scroll: { flexGrow: 1, paddingBottom: 40 },
   header: { paddingTop: 50, paddingBottom: 28, paddingHorizontal: SPACING.xl, alignItems: 'center' },
@@ -203,6 +240,9 @@ const styles = StyleSheet.create({
     borderRadius: BORDER_RADIUS.xl, padding: SPACING.xl, ...SHADOW.lg,
   },
   sectionTitle: { fontFamily: FONTS.heading, fontSize: FONT_SIZE.base, fontWeight: FONT_WEIGHT.bold, color: COLORS.text, marginBottom: SPACING.md, paddingBottom: 8, borderBottomWidth: 1, borderBottomColor: COLORS.border },
+  locationButton: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8, padding: 12, borderRadius: BORDER_RADIUS.md, borderWidth: 1, borderColor: COLORS.primary, marginBottom: SPACING.md },
+  locationButtonText: { color: COLORS.primary, fontSize: FONT_SIZE.sm, fontWeight: FONT_WEIGHT.semiBold },
+  locationHint: { color: COLORS.textMuted, fontSize: FONT_SIZE.xs, marginTop: -SPACING.sm, marginBottom: SPACING.md },
   fieldGroup: { marginBottom: SPACING.sm },
   label: { fontSize: FONT_SIZE.xs, fontWeight: FONT_WEIGHT.semiBold, color: COLORS.textSecondary, marginBottom: 4 },
   inputWrapper: {
@@ -232,4 +272,7 @@ const styles = StyleSheet.create({
   loginLink: { alignItems: 'center', marginTop: SPACING.lg },
   loginLinkText: { fontSize: FONT_SIZE.sm, color: COLORS.textSecondary },
   loginLinkBold: { color: COLORS.primary, fontWeight: FONT_WEIGHT.bold },
-});
+
+  });
+  return styles;
+}

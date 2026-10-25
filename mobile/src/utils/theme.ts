@@ -2,34 +2,34 @@
 // Califnco Water Purifier App — Theme System
 // ============================================================
 
-export const COLORS = {
-// Sky-blue and slate palette from the supplied mobile UI direction.
-  primary: '#5C6B73',
-  primaryDark: '#455A64',
-  primaryLight: '#89D9E6',
-  accent: '#89D9E6',
-  accentDark: '#3B8794',
+const LIGHT_COLORS = {
+  // Soft neutral palette inspired by the supplied editorial shopping UI.
+  primary: '#171719',
+  primaryDark: '#111113',
+  primaryLight: '#E4E3E8',
+  accent: '#8ADBE5',
+  accentDark: '#347D88',
 
-  secondary: '#5C6B73',
-  success: '#27A98D',
-  warning: '#F39C12',
-  error: '#E74C3C',
-  info: '#4B9EAE',
+  secondary: '#55555B',
+  success: '#278B72',
+  warning: '#D69424',
+  error: '#C94747',
+  info: '#4E9BA5',
 
-  background: '#455A64',
+  background: '#F1F0F4',
   surface: '#FFFFFF',
-  surfaceAlt: '#F3F8F9',
+  surfaceAlt: '#E9E8ED',
   card: '#FFFFFF',
 
-  text: '#1C343C',
-  textSecondary: '#50666E',
-  textMuted: '#829398',
-  textLight: '#A0AFB2',
+  text: '#19191D',
+  textSecondary: '#696970',
+  textMuted: '#92929A',
+  textLight: '#ADADB4',
   textOnPrimary: '#FFFFFF',
 
-  border: '#D4E0E2',
-  borderLight: '#E5ECEE',
-  divider: '#DCE6E8',
+  border: '#DEDEE3',
+  borderLight: '#ECEBF0',
+  divider: '#E5E4E9',
 
   // Status colors
   pending: '#F39C12',
@@ -48,12 +48,48 @@ export const COLORS = {
   overlayLight: 'rgba(0,0,0,0.2)',
 };
 
+const DARK_COLORS: typeof LIGHT_COLORS = {
+  ...LIGHT_COLORS,
+  primary: '#8ADBE5',
+  primaryDark: '#101114',
+  primaryLight: '#303238',
+  accent: '#8ADBE5',
+  accentDark: '#6CC7D3',
+  secondary: '#A3A3AD',
+  success: '#54C6A2',
+  warning: '#F0B44C',
+  error: '#FF7777',
+  info: '#7BCAD4',
+  background: '#101114',
+  surface: '#1B1C20',
+  surfaceAlt: '#28292E',
+  card: '#1B1C20',
+  text: '#F4F4F5',
+  textSecondary: '#C7C7CE',
+  textMuted: '#A0A0AA',
+  textLight: '#85858F',
+  textOnPrimary: '#101114',
+  border: '#383940',
+  borderLight: '#2D2E34',
+  divider: '#383940',
+  dealerBadgeText: '#101114',
+  overlay: 'rgba(0,0,0,0.72)',
+  overlayLight: 'rgba(0,0,0,0.4)',
+};
+
+export const COLORS: typeof LIGHT_COLORS = { ...LIGHT_COLORS };
+
+export function setColorScheme(mode: 'light' | 'dark'): void {
+  Object.assign(COLORS, mode === 'dark' ? DARK_COLORS : LIGHT_COLORS);
+  STATUS_COLORS.refunded = COLORS.textMuted;
+}
+
 export const FONTS = {
-  regular: 'sans-serif-rounded',
-  medium: 'sans-serif-rounded',
-  semiBold: 'sans-serif-rounded',
-  bold: 'sans-serif-rounded',
-  heading: 'sans-serif-rounded',
+  regular: 'sans-serif',
+  medium: 'sans-serif-medium',
+  semiBold: 'sans-serif-medium',
+  bold: 'sans-serif',
+  heading: 'Georgia',
 };
 
 export const FONT_SIZE = {
@@ -88,35 +124,35 @@ export const SPACING = {
 };
 
 export const BORDER_RADIUS = {
-  sm: 8,
-  md: 14,
-  lg: 18,
-  xl: 24,
-  xxl: 30,
+  sm: 10,
+  md: 16,
+  lg: 22,
+  xl: 28,
+  xxl: 34,
   full: 9999,
 };
 
 export const SHADOW = {
   sm: {
-    shadowColor: '#000',
+    shadowColor: '#25242A',
     shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.06,
-    shadowRadius: 3,
-    elevation: 2,
+    shadowOpacity: 0.035,
+    shadowRadius: 5,
+    elevation: 1,
   },
   md: {
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.10,
-    shadowRadius: 8,
-    elevation: 4,
+    shadowColor: '#25242A',
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.055,
+    shadowRadius: 10,
+    elevation: 2,
   },
   lg: {
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.15,
-    shadowRadius: 12,
-    elevation: 8,
+    shadowColor: '#25242A',
+    shadowOffset: { width: 0, height: 5 },
+    shadowOpacity: 0.08,
+    shadowRadius: 16,
+    elevation: 4,
   },
 };
 

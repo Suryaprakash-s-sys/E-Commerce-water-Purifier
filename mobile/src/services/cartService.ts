@@ -1,6 +1,7 @@
 import {
   doc,
   getDoc,
+  getDocFromServer,
   setDoc,
   updateDoc,
   deleteDoc,
@@ -17,14 +18,42 @@ export const cartService = {
    * Get cart for user
    */
   async getCart(userId: string): Promise<Cart> {
-    const snap = await getDoc(doc(db, 'carts', userId));
+    const snap = await getDocFromServer(doc(db, 'carts', userId)).catch((error: { code?: string }) => {
+      if (error?.code === 'unavailable' || error?.code === 'deadline-exceeded') {
+        return getDoc(doc(db, 'carts', userId));
+      }
+      throw error;
+    });
     if (!snap.exists()) {
       return { userId, items: [], totalItems: 0, totalAmount: 0, updatedAt: new Date() };
     }
     const data = snap.data();
+    const items = await Promise.all(((data.items ?? []) as CartItem[]).map(async (item) => {
+      try {
+        const productSnap = await getDocFromServer(doc(db, 'products', item.productId));
+        if (!productSnap.exists()) return item;
+        const productData = productSnap.data();
+        const updatedAtValue = productData.updatedAt;
+        const updatedAt = updatedAtValue && typeof updatedAtValue.toDate === 'function'
+          ? updatedAtValue.toDate()
+          : item.product.updatedAt;
+        return {
+          ...item,
+          product: {
+            ...item.product,
+            images: Array.isArray(productData.images) ? productData.images as string[] : item.product.images,
+            updatedAt,
+          },
+        };
+      } catch (error) {
+        const code = (error as { code?: string } | null)?.code;
+        if (code !== 'unavailable' && code !== 'deadline-exceeded') throw error;
+        return item;
+      }
+    }));
     return {
       userId,
-      items: (data.items ?? []) as CartItem[],
+      items,
       totalItems: data.totalItems ?? 0,
       totalAmount: data.totalAmount ?? 0,
       updatedAt: data.updatedAt?.toDate?.() ?? new Date(),

@@ -1,16 +1,33 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity,
-  Alert, ActivityIndicator,
+  Alert, ActivityIndicator, Switch,
 } from 'react-native';
 import { useAppStore } from '../../store/useAppStore';
+import { useAppTheme } from '../../context/ThemeContext';
 import { COLORS, FONTS, FONT_SIZE, FONT_WEIGHT, SPACING, BORDER_RADIUS, SHADOW } from '../../utils/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useFocusEffect } from '@react-navigation/native';
+import { orderService } from '../../services/orderService';
 
-export default function ProfileScreen({ navigation }: any) {
+export default function ProfileScreen({
+ navigation }: any) {
+  const styles = createStyles();
   const { user, signOut, isDealer, isDealerApproved } = useAppStore();
+  const { isDark, toggleTheme } = useAppTheme();
   const [isSigningOut, setIsSigningOut] = useState(false);
+  const [orderCount, setOrderCount] = useState<number | null>(null);
+
+  useFocusEffect(useCallback(() => {
+    let active = true;
+    if (user?.uid) {
+      orderService.getUserOrders(user.uid)
+        .then((orders) => { if (active) setOrderCount(orders.length); })
+        .catch((error) => console.error('Could not load profile order count:', error));
+    }
+    return () => { active = false; };
+  }, [user?.uid]));
 
   const handleSignOut = () => {
     Alert.alert('Sign Out', 'Are you sure you want to sign out?', [
@@ -31,7 +48,7 @@ export default function ProfileScreen({ navigation }: any) {
   };
 
   const menuItems = [
-    { icon: 'person-outline', label: 'Edit Profile', onPress: () => Alert.alert('Coming Soon', 'Profile editing will be available soon') },
+    { icon: 'person-outline', label: 'Edit Profile', onPress: () => navigation.navigate('EditProfile') },
     { icon: 'location-outline', label: 'Saved Addresses', onPress: () => navigation.navigate('Address') },
     { icon: 'receipt-outline', label: 'My Orders', onPress: () => navigation.navigate('OrderHistory') },
     { icon: 'construct-outline', label: 'Service Bookings', onPress: () => Alert.alert('Coming Soon') },
@@ -82,7 +99,7 @@ export default function ProfileScreen({ navigation }: any) {
         </View>
         <View style={styles.statDivider} />
         <View style={styles.statCard}>
-          <Text style={styles.statValue}>—</Text>
+          <Text style={styles.statValue}>{orderCount ?? '—'}</Text>
           <Text style={styles.statLabel}>Orders</Text>
         </View>
         <View style={styles.statDivider} />
@@ -103,6 +120,19 @@ export default function ProfileScreen({ navigation }: any) {
             <Ionicons name="chevron-forward" size={18} color={COLORS.textLight} />
           </TouchableOpacity>
         ))}
+        <View style={[styles.menuItem, styles.themeItem]}>
+          <View style={styles.menuIconBg}>
+            <Ionicons name={isDark ? 'moon' : 'sunny-outline'} size={20} color={COLORS.primary} />
+          </View>
+          <Text style={styles.menuLabel}>Dark mode</Text>
+          <Switch
+            accessibilityLabel="Toggle dark mode"
+            value={isDark}
+            onValueChange={toggleTheme}
+            trackColor={{ false: COLORS.border, true: COLORS.accentDark }}
+            thumbColor={isDark ? COLORS.accent : COLORS.surface}
+          />
+        </View>
       </View>
 
       {/* Sign Out */}
@@ -127,7 +157,8 @@ export default function ProfileScreen({ navigation }: any) {
   );
 }
 
-const styles = StyleSheet.create({
+function createStyles() {
+  const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: COLORS.background },
   header: { paddingTop: 60, paddingBottom: SPACING.xl, alignItems: 'center' },
   avatarContainer: { position: 'relative', marginBottom: SPACING.md },
@@ -145,9 +176,13 @@ const styles = StyleSheet.create({
   statDivider: { width: 1, backgroundColor: COLORS.border, marginVertical: SPACING.sm },
   menu: { backgroundColor: COLORS.surface, marginHorizontal: SPACING.base, marginTop: SPACING.base, borderRadius: BORDER_RADIUS.xl, ...SHADOW.sm, overflow: 'hidden' },
   menuItem: { flexDirection: 'row', alignItems: 'center', padding: SPACING.base, borderBottomWidth: 1, borderBottomColor: COLORS.borderLight },
+  themeItem: { borderBottomWidth: 0 },
   menuIconBg: { width: 36, height: 36, borderRadius: 10, backgroundColor: COLORS.primary + '15', alignItems: 'center', justifyContent: 'center', marginRight: SPACING.md },
   menuLabel: { flex: 1, fontSize: FONT_SIZE.base, color: COLORS.text },
   signOutBtn: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8, margin: SPACING.base, padding: SPACING.md, borderRadius: BORDER_RADIUS.md, borderWidth: 1.5, borderColor: COLORS.error },
   signOutText: { color: COLORS.error, fontWeight: FONT_WEIGHT.semiBold },
   version: { textAlign: 'center', fontSize: FONT_SIZE.xs, color: COLORS.textMuted },
-});
+
+  });
+  return styles;
+}
